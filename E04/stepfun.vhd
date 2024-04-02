@@ -30,7 +30,7 @@ entity stepfun is
         kpw :                             in bit_vector(31 downto 0);
         ao, bo, co, do, eo, fo, go, ho : out bit_vector(31 downto 0)
     );
-end entity;
+end stepfun;
 
 architecture stepfun_arch of stepfun is
     component ch is 
@@ -61,13 +61,9 @@ architecture stepfun_arch of stepfun is
         );
     end component;
     
+    -- FIXME: MISSING ARCHITECTURE
     component somador is 
-        port (
-            x :            in bit_vector(31 downto 0);
-            carry_in :     in bit := '0';
-            y :       out bit_vector(31 downto 0);
-            q :       out bit_vector(31 downto 0)
-    	); 
+        -- FIXME: MISSING ENTITY
     end component;
     
     -- comum aas duas saidas

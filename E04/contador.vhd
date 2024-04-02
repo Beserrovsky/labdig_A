@@ -21,34 +21,34 @@ use IEEE.std_logic_1164.ALL;
 --! @version <v0.1>
 --
 -------------------------------------------------------------------------------
---! @todo <TESTAR contador s/ registrador> \n
---! <Contador c/ registrador ?> \n
+--! @todo <TESTAR contador!> \n
+--
 -------------------------------------------------------------------------------
 
 entity contador is 
 port (
-    clk_i, rst_i, en_i :  in bit; -- clock, reset, enable
+    clk_i, rst_i, en_i   :  in bit; -- clock, reset, enable
     counter_o            : out bit_vector(5 downto 0) -- 64 valores
 );
-end entity;
+end contador;
 
 -------------------------------------------------------------------------------
 
 architecture contador_arch of contador is
     
-    signal sig_counter : bit_vector(5 downto 0);
+    signal s_counter : bit_vector(5 downto 0);
 
 begin
 
     process(clk_i, rst_i, en_i)
         if rst_i = '1' then
             counter_o <= 0;
-        elsif (clk_i='1' and clock'event) then
+        elsif (clk_i'event and clk_i='1') then
             if en_i = '1' then
-                sig_counter <= sig_counter + 1;
+                s_counter <= s_counter + 1;
             end if;
         end if;
     end process;
     
-  counter_o <= sig_counter;
+  counter_o <= s_counter;
 end architecture;
