@@ -34,37 +34,37 @@ end entity;
 
 architecture stepfun_arch of stepfun is
     component ch is 
-    	port (
-      		x, y, z : in bit_vector(31 downto 0);
-      		q :      out bit_vector(31 downto 0)
-    	);
+        port (
+            x, y, z : in bit_vector(31 downto 0);
+            q :      out bit_vector(31 downto 0)
+        );
     end component;
     
     component maj is 
-    	port (
-      		x, y, z : in bit_vector (31 downto 0);
-      		q :      out bit_vector (31 downto 0)
-      	);
+        port (
+            x, y, z : in bit_vector (31 downto 0);
+            q :      out bit_vector (31 downto 0)
+        );
     end component;
     
     component sum0 is 
-    	port (
-    		x :  in bit_vector(31 downto 0);
-    		q : out bit_vector(31 downto 0)
-    	);
+        port (
+            x :  in bit_vector(31 downto 0);
+            q : out bit_vector(31 downto 0)
+        );
     end component;
     
     component sum1 is 
-    	port (
-    		x :  in bit_vector(31 downto 0);
-    		q : out bit_vector(31 downto 0)
-    	);
+        port (
+            x :  in bit_vector(31 downto 0);
+            q : out bit_vector(31 downto 0)
+        );
     end component;
     
     component somador is 
-    	port (
-    		x :        in bit_vector(31 downto 0);
-    		carry_in : in bit := '0';
+        port (
+            x :            in bit_vector(31 downto 0);
+            carry_in :     in bit := '0';
             y :       out bit_vector(31 downto 0);
             q :       out bit_vector(31 downto 0)
     	); 

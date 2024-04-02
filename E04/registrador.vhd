@@ -14,6 +14,7 @@ use IEEE.std_logic_1164.ALL;
 --! 
 --
 --! @author <Felipe Beserra (felipebeserra25@usp.br)>
+--! @author <Renato Ferreira (renato.ferreiraspfc@usp.br)>
 --
 --! @date <01\04\2024>
 --
@@ -24,18 +25,16 @@ use IEEE.std_logic_1164.ALL;
 -------------------------------------------------------------------------------
 
 entity registrador is 
-	port (
-    	--
-	);
+port (
+    --
+);
 end entity;
 
-architecture contador_arch of contador is
-	
-    signal sig_counter = 0
-    
-    begin
-    	
-        
-        
-    	counter <= sig_counter;
+architecture registrador_arch of registrador is	
+    -- constants
+    -- signals
+begin
+    -- processes
+    -- port maps
+    -- combinatory logic
 end architecture;
