@@ -10,7 +10,7 @@ use IEEE.std_logic_1164.ALL;
 --
 -- unit name: Contador Simples (contador)
 --
---! @brief Conta até 64 (decimal), 6bits
+--! @brief Conta até 64 (0 --> 63)
 --! Contador com sinais de reset e enable
 --
 --! @author <Felipe Beserra (felipebeserra25@usp.br)>
@@ -27,8 +27,8 @@ use IEEE.std_logic_1164.ALL;
 
 entity contador is 
 port (
-    clk, reset, enable :  in bit;
-    counter            : out bit_vector(5 downto 0) -- 64 valores
+    clk_i, rst_i, en_i :  in bit; -- clock, reset, enable
+    counter_o            : out bit_vector(5 downto 0) -- 64 valores
 );
 end entity;
 
@@ -40,15 +40,15 @@ architecture contador_arch of contador is
 
 begin
 
-    process(clk, reset, enable)
-        if reset = '1' then
-            counter <= 0
-        elsif (clk='1' and clock'event) then
-            if enable = '1' then
+    process(clk_i, rst_i, en_i)
+        if rst_i = '1' then
+            counter_o <= 0;
+        elsif (clk_i='1' and clock'event) then
+            if en_i = '1' then
                 sig_counter <= sig_counter + 1;
             end if;
         end if;
     end process;
     
-  counter <= sig_counter;
+  counter_o <= sig_counter;
 end architecture;
