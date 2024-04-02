@@ -24,15 +24,16 @@ use IEEE.std_logic_1164.ALL;
 --! @details
 --!
 --! <b>Dependencies:</b>\n
---! <stepfun>
---! <contador>
---! <funcs>
+--! stepfun.vhd
+--! contador.vhd
+--! funcs.vhd
+--
 -------------------------------------------------------------------------------
 --! @todo Etender cálculos \n
 --! Add Contador \n
 --! Testar com testbench \n
---! Maybe use registers? \n
-
+--! CHALLENGE: Use registers? \n
+--
 -------------------------------------------------------------------------------
 
 --! @brief SHA-256 MultiStepsFunctions
@@ -50,12 +51,12 @@ end multisteps;
 
 architecture multisteps_arch of multisteps is
     
-    -- H: √(8 primeiros números primos) "sqrt"
+    -- H: √(8 primeiros números primos) --> "sqrt"
     constant const_H : array(0 to 7) of bit_vector(31 downto 0) := ( 
         x"6a09e667", x"bb67ae85", x"3c6ef372", x"a54ff53a", x"510e527f", x"9b05688c", x"1f83d9ab", x"5be0cd19"
     );
 
-    -- K: ∛(64 primeiros números primos) "cube root"
+    -- K: ∛(64 primeiros números primos) --> "cube root"
     constant const_K : array(0 to 63) of bit_vector(31 downto 0) := (
         x"428a2f98", x"71374491", x"b5c0fbcf", x"e9b5dba5", x"3956c25b", x"59f111f1", x"923f82a4", x"ab1c5ed5",
         x"d807aa98", x"12835b01", x"243185be", x"550c7dc3", x"72be5d74", x"80deb1fe", x"9bdc06a7", x"c19bf174",
@@ -82,7 +83,7 @@ architecture multisteps_arch of multisteps is
 
     -- stepfun signals
     signal s_a_i, s_b_i, s_c_i, s_d_i, s_e_i, s_f_i, s_g_i, s_h_i : bit_vector(31 downto 0); 
-    signal s_kpw_i                                                  : bit_vector(31 downto 0);
+    signal s_kpw_i                                                : bit_vector(31 downto 0);
     signal s_a_o, s_b_o, s_c_o, s_d_o, s_e_o, s_f_o, s_g_o, s_h_o : bit_vector(31 downto 0); 
     
     -- funcs components
@@ -110,9 +111,11 @@ architecture multisteps_arch of multisteps is
     end component;
 
     -- funcs signals
-    signal s_sigma0_i, s_sigma1_i :                               bit_vector(31 downto 0);
-    signal s_sigma0_o, s_sigma1_o :                               bit_vector(31 downto 0);
-    signal s_soma_x_i, s_soma_y_i, s_soma_carry_o, s_soma_sum_o : bit_vector(31 downto 0);
+    signal s_sigma0_i, s_sigma1_i :                                   bit_vector(31 downto 0);
+    signal s_sigma0_o, s_sigma1_o :                                   bit_vector(31 downto 0);
+    signal s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o : bit_vector(31 downto 0);
+    signal s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o : bit_vector(31 downto 0);
+    signal s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o : bit_vector(31 downto 0);
 
     -- multisteps signals
     signal s_W    : array(0 to 63) of bit_vector(31 downto 0);
@@ -135,6 +138,10 @@ begin
     SIGMA0_PM: sigma0 port map (s_sigma0_i, s_sigma0_o); -- σ₀(s_sigma0_i)
     SIGMA1_PM: sigma1 port map (s_sigma1_i, s_sigma1_o); -- σ₁(s_sigma1_i)
 
+    SOMA1_PM: somador port map (s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o);
+    SOMA2_PM: somador port map (s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o);
+    SOMA3_PM: somador port map (s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o);
+
     process (clk, rst, msgi)
         if rst = '1' then
             -- reset: HASH_Out = Constante H
@@ -152,16 +159,24 @@ begin
                 -- σ₀(Wₜ₋₁₅)
                 s_sigma0_i <= s_W(s_counter_o - 15);
             
-                -- Wₜ = σ₁(Wₜ₋₂) + Wₜ₋₇ + σ₀(Wₜ₋₁₅) + Wₜ₋₁₆ --> 32 bits?
-                -- FIXME: Use somador??
-                s_W(s_counter_o) <= 
-                    s_sigma1_o + s_W(s_counter_o - 7) + s_sigma0_o + s_W(s_counter_o - 16);
+                -- σ₁(Wₜ₋₂) + Wₜ₋₇
+                s_soma1_x_i <= s_sigma1_o;
+                s_soma1_y_i <= s_W(s_counter_o - 7);
+
+                -- σ₀(Wₜ₋₁₅) + Wₜ₋₁₆
+                s_soma2_x_i <= s_sigma0_o;
+                s_soma2_y_i <= s_W(s_counter_o - 16);
+
+                -- Wₜ = σ₁(Wₜ₋₂) + Wₜ₋₇ + σ₀(Wₜ₋₁₅) + Wₜ₋₁₆
+                s_soma3_x_i <= s_soma1_sum_x;
+                s_soma3_y_i <= s_soma1_sum_x;
+                s_W(s_counter_o) <= s_soma3_sum_o;
             end if;
 
             s_kpw_i <= s_W(s_counter_o) + const_K(s_counter_o);
 
             s_HASO <= s_a_o & s_b_o & s_c_o & s_d_o & 
-                        s_e_o & s_f_o & s_g_o & s_h_o;
+                      s_e_o & s_f_o & s_g_o & s_h_o;
         end if;
     end process;
 
