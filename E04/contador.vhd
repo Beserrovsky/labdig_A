@@ -1,7 +1,8 @@
 --! Standard library
 library IEEE;
 --! Standard packages
-use IEEE.std_logic_1164.ALL;
+-- use IEEE.std_logic_1164.ALL;
+use ieee.numeric_bit.all;
 -------------------------------------------------------------------------------
 -- --
 -- USP, PCS3335 - Laboratório Digital A --
@@ -22,7 +23,6 @@ use IEEE.std_logic_1164.ALL;
 --
 -------------------------------------------------------------------------------
 --! @todo <TESTAR contador!> \n
---! FIXME: contador.vhd:50:40:error: no function declarations for operator "+" \n
 --
 -------------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ end contador;
 
 architecture contador_arch of contador is
     
-    signal s_counter : bit_vector(5 downto 0) := (others => '0');
+    signal s_counter : unsigned(5 downto 0) := (others => '0');
 
 begin
 
@@ -47,12 +47,12 @@ begin
             s_counter <= (others => '0');
         elsif rising_edge(clk_i) then
             if en_i = '1' then
-                s_counter <= s_counter + 1;
+                s_counter <= unsigned(s_counter) + 1;
             end if;
         end if;
     end process;
     
-    counter_o <= s_counter;
+    counter_o <= bit_vector(s_counter);
 
 end architecture;
 
