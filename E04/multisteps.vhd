@@ -70,10 +70,6 @@ architecture multisteps_arch of multisteps is
         x"748f82ee", x"78a5636f", x"84c87814", x"8cc70208", x"90befffa", x"a4506ceb", x"bef9a3f7", x"c67178f2"
     );
     
-    -- counter signals
-    signal s_counter_en, s_counter_reset : bit;
-    signal s_counter_o : natural range 0 to 63;
-
     -- stepfun component
     component stepfun is
         port (
@@ -109,6 +105,13 @@ architecture multisteps_arch of multisteps is
         );
     end component;
 
+    component contador is 
+        port (
+            clk_i, rst_i, en_i   :  in bit; -- clock, reset, enable
+            counter_o            : out integer range 0 to 63 -- 64 valores
+        );
+    end component;
+
     -- funcs signals
     signal s_sigma0_i, s_sigma1_i : bit_vector(31 downto 0);
     signal s_sigma0_o, s_sigma1_o : bit_vector(31 downto 0);
@@ -119,6 +122,11 @@ architecture multisteps_arch of multisteps is
     -- multisteps signals
     signal s_W    : array(0 to 63) of bit_vector(31 downto 0);
     signal s_HASO : bit_vector(255 downto 0);
+
+    -- contador signals
+    signal clk_contador, rst_contador, enable_contador : in bit;
+    signal s_counter_o : integer range 0 to 63 := 0;
+     
 begin
 
     -- stepfun.vhd
@@ -136,6 +144,11 @@ begin
     SOMA1_PM: somador port map (s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o);
     SOMA2_PM: somador port map (s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o);
     SOMA3_PM: somador port map (s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o);
+
+    -- contador.vhd
+    CONTADOR: contador port map(clk, rst, enable_contador,s_counter_o);
+
+    enable_contador <= 1;
 
     process (clk, rst, msgi)
     begin
@@ -175,6 +188,6 @@ begin
         end if;
     end process;
 
-    done <= s_counter_o = 64;
+    done <= s_counter_o = 63;
     haso <= s_HASO;
 end architecture;
