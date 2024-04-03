@@ -61,9 +61,12 @@ architecture stepfun_arch of stepfun is
         );
     end component;
     
-    -- FIXME: MISSING ARCHITECTURE
-    component somador is 
-        -- FIXME: MISSING ENTITY
+    component adder32 is
+        port (
+            a     :  in bit_vector (31 downto 0);
+            b     :  in bit_vector (31 downto 0);
+            r     : out bit_vector (31 downto 0) -- a + b
+        );
     end component;
     
     -- comum aas duas saidas
@@ -78,16 +81,16 @@ architecture stepfun_arch of stepfun is
         -- calculo do termo em comum
         CHcomum: ch port map(ei, fi, gi, ch_c);
         sum1comum: sum1 port map(ei, sum_ei);
-        somacomum1: somador port map(x=>hi, y=>kpw, q=>scomum1);
-        somacomum2: somador port map(x=>sum_ei, y=>ch_c, q=>scomum2);
-        somacomum: somador port map(x=>scomum1, y=>scomum2, q=>comum);
+        somacomum1: adder32 port map(x=>hi, y=>kpw, q=>scomum1);
+        somacomum2: adder32 port map(x=>sum_ei, y=>ch_c, q=>scomum2);
+        somacomum: adder32 port map(x=>scomum1, y=>scomum2, q=>comum);
         -- calculo de e0:
-        somae0: somador port map(x=>di, y=>comum, q=>e0f);
+        somae0: adder32 port map(x=>di, y=>comum, q=>e0f);
         -- calculo de a0:
         sum0a0: sum0 port map(ai, a0sum0);
         maja0: maj port map(ai, bi, ci, a0maj);
-        soma1a0: somador port map(x=>a0maj, y=>a0sum0, q=>s1a0);
-        somaa0: somador port map(x=>s1a0, y=>comum, q=>a0f);
+        soma1a0: adder32 port map(x=>a0maj, y=>a0sum0, q=>s1a0);
+        somaa0: adder32 port map(x=>s1a0, y=>comum, q=>a0f);
 
         eo <= e0f;
         ao <= a0f;

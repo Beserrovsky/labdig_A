@@ -22,13 +22,14 @@ use IEEE.std_logic_1164.ALL;
 --
 -------------------------------------------------------------------------------
 --! @todo <TESTAR contador!> \n
+--! FIXME: contador.vhd:50:40:error: no function declarations for operator "+" \n
 --
 -------------------------------------------------------------------------------
 
 entity contador is 
     port (
         clk_i, rst_i, en_i   :  in bit; -- clock, reset, enable
-        counter_o            : out integer range 0 to 63 -- 64 valores
+        counter_o            : out bit_vector(5 downto 0) -- 64 valores
     );
 end contador;
 
@@ -36,7 +37,7 @@ end contador;
 
 architecture contador_arch of contador is
     
-    signal s_counter : integer range 0 to 63 := 0;
+    signal s_counter : bit_vector(5 downto 0) := (others => '0');
 
 begin
 

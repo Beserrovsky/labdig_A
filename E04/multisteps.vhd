@@ -1,6 +1,7 @@
 --! Standard library
 library IEEE;
 --! Standard packages
+-- use IEEE.STD_LOGIC_1164.ALL;
 -------------------------------------------------------------------------------
 -- --
 -- USP, PCS3335 - Laboratório Digital A --
@@ -37,11 +38,6 @@ library IEEE;
 
 --! @brief SHA-256 MultiStepsFunctions
 --! @details 64 clock cycles, hashes 512 bits
-
-
-LIBRARY ieee ;
-USE ieee.std_logic_1164.all ;
-
 entity multisteps is
     port (
         clk, rst : in bit; 
@@ -51,7 +47,7 @@ entity multisteps is
     );
 end multisteps;
 
-
+-------------------------------------------------------------------------------
 
 architecture multisteps_arch of multisteps is
     
@@ -74,7 +70,6 @@ architecture multisteps_arch of multisteps is
         x"748f82ee", x"78a5636f", x"84c87814", x"8cc70208", x"90befffa", x"a4506ceb", x"bef9a3f7", x"c67178f2"
     );
     
-    
     component stepfun is
         port (
             ai, bi, ci, di, ei, fi, gi, hi :  in bit_vector(31 downto 0);
@@ -83,7 +78,14 @@ architecture multisteps_arch of multisteps is
         );
     end component;
 
-    
+    signal s_sf_a_i, s_sf_b_i, s_sf_c_i, s_sf_d_i, 
+           s_sf_e_i, s_sf_f_i, s_sf_g_i, s_sf_h_i :            bit_vector(31 downto 0); 
+
+    signal s_sf_kpw_i :                                        bit_vector(31 downto 0);
+
+    signal s_sf_a_o, s_sf_b_o, s_sf_c_o, s_sf_d_o, 
+           s_sf_e_o, s_sf_f_o, s_sf_g_o, s_sf_h_o :            bit_vector(31 downto 0); 
+
     component sigma0 is
         port(
             x_i:  in bit_vector (31 downto 0);
@@ -91,108 +93,137 @@ architecture multisteps_arch of multisteps is
         );
     end component;
     
-    
     component sigma1 is
         port(
             x_i:  in bit_vector (31 downto 0);
             q_o: out bit_vector (31 downto 0)
         );
     end component;
-
    
-    component somador is
+    component adder32 is
         port (
-            x_i :      in bit_vector (31 downto 0);
-            y_i :      in bit_vector (31 downto 0);
-            carry_o : out bit;
-            sum_o :   out bit_vector (31 downto 0) 
+            a :      in bit_vector (31 downto 0);
+            b :      in bit_vector (31 downto 0);
+            r :     out bit_vector (31 downto 0) 
         );
     end component;
+
+    signal s_sigma0_i, s_sigma1_i :                bit_vector(31 downto 0);
+    signal s_sigma0_o, s_sigma1_o :                bit_vector(31 downto 0);
+    signal s_soma1_a_i, s_soma1_b_i, s_soma1_r_o : bit_vector(31 downto 0);
+    signal s_soma2_a_i, s_soma2_b_i, s_soma2_r_o : bit_vector(31 downto 0);
+    signal s_soma3_a_i, s_soma3_b_i, s_soma3_r_o : bit_vector(31 downto 0);
 
     component contador is 
         port (
             clk_i, rst_i, en_i   :  in bit; 
-            counter_o            : out integer range 0 to 63 
+            counter_o            : out bit_vector(5 downto 0) -- 64 values
         );
     end component;
 
-    
-    signal s_sigma0_i, s_sigma1_i : bit_vector(31 downto 0);
-    signal s_sigma0_o, s_sigma1_o : bit_vector(31 downto 0);
-    signal s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o : bit_vector(31 downto 0);
-    signal s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o : bit_vector(31 downto 0);
-    signal s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o : bit_vector(31 downto 0);
+    signal s_counter_en, s_counter_reset : bit;
+    signal s_counter_o : bit_vector(5 downto 0);
 
-    
     signal s_W    : array_H;
     signal s_HASO : bit_vector(255 downto 0);
 
-   
-    signal clk_contador, rst_contador, enable_contador : bit;
-    signal s_counter_o : integer range 0 to 63;
-     
-begin
-
-    
-    STEPFUN_PM: stepfun port map (
-        s_a_i, s_b_i, s_c_i, s_d_i, s_e_i, s_f_i, s_g_i, s_h_i, s_kpw_i,
-        s_a_o, s_b_o, s_c_o, s_d_o, s_e_o, s_f_o, s_g_o, s_h_o
-    );
-
-    
-    SIGMA0_PM: sigma0 port map (s_sigma0_i, s_sigma0_o); 
-    
-    SIGMA1_PM: sigma1 port map (s_sigma1_i, s_sigma1_o); 
-
-   
-    SOMA1_PM: somador port map (s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o);
-    SOMA2_PM: somador port map (s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o);
-    SOMA3_PM: somador port map (s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o);
-
-    
-    CONTADOR: contador port map(clk, rst, enable_contador,s_counter_o);
-
-    enable_contador <= 1;
-
-    process (clk, rst, msgi)
     begin
-        if rst = '1' then
-            
-            s_HASO <= const_H(0) & const_H(1) & const_H(2) & const_H(3) &
-                      const_H(4) & const_H(5) & const_H(6) & const_H(7);
-            s_counter_o <= 0;
-        elsif rising_edge(clk) then
-            if s_counter_o < 16 then
-                
-                s_W(s_counter_o) <= msgi((s_counter_o * 32 + 31) downto (s_counter_o * 32));
-            else
-                
-                s_sigma1_i <= s_W(s_counter_o - 2);
-                
-                s_sigma0_i <= s_W(s_counter_o - 15);
-            
-                
-                s_soma1_x_i <= s_sigma1_o;
-                s_soma1_y_i <= s_W(s_counter_o - 7);
-                
-                s_soma2_x_i <= s_sigma0_o;
-                s_soma2_y_i <= s_W(s_counter_o - 16);
-            
-                
-                s_soma1_sum_o <= s_soma1_x_i + s_soma1_y_i;
-                s_soma2_sum_o <= s_soma2_x_i + s_soma2_y_i;
-                s_W(s_counter_o) <= s_soma1_sum_o + s_soma2_sum_o;
-            end if;
+        COUNTER_INST: counter port map (
+            clk, s_counter_reset, s_counter_en,
+            s_counter_o
+        );
 
-            s_kpw_i <= s_W(s_counter_o) + const_K(s_counter_o);
-            s_counter_o <= s_counter_o + 1;
+        STEPFUN_INST: stepfun port map (
+            s_sf_a_i, s_sf_b_i, s_sf_c_i, s_sf_d_i, s_sf_e_i, s_sf_f_i, s_sf_g_i, s_sf_h_i,
+            s_sf_kpw_i,
+            s_sf_a_o, s_sf_b_o, s_sf_c_o, s_sf_d_o, s_sf_e_o, s_sf_f_o, s_sf_g_o, s_sf_h_o
+        );
 
-            s_HASO <= s_a_o & s_b_o & s_c_o & s_d_o & 
-                      s_e_o & s_f_o & s_g_o & s_h_o;
+        SIGMA0_INST: sigma0 port map (s_sigma0_i, s_sigma0_o); -- σ₀(s_sigma0_i)
+        SIGMA1_INST: sigma1 port map (s_sigma1_i, s_sigma1_o); -- σ₁(s_sigma1_i)
+        
+
+        SOMA1_INST: somador port map (s_soma1_a_i, s_soma1_b_i, s_soma1_carry_o, s_soma1_r_o);
+        SOMA2_INST: somador port map (s_soma2_a_i, s_soma2_b_i, s_soma2_carry_o, s_soma2_r_o);
+        SOMA3_INST: somador port map (s_soma3_a_i, s_soma3_b_i, s_soma3_carry_o, s_soma3_r_o);
+
+        process (clk, rst, msgi)
+            if rst = '1' then
+                -- reset: HASH_Out = Constante H
+                s_HASO <= const_H(0) & const_H(1) & const_H(2) & const_H(3) &
+                        const_H(4) & const_H(5) & const_H(6) & const_H(7);
+            elsif (clk'event and clk = '1') then
+                if s_counter_0
+
+                if s_counter_o < 16 then -- Executa até (inclusive) a 16ª iteração
+                    -- Wₜ = Mₜ (16 primeiros blocos de 32 bits de MSG_INPUT)
+                    s_W(s_counter_o) <= msgi(((s_counter_o * 32) + 31) downto ((s_counter_o - 1) * 32));
+                        -- 0 --> (31 downto 0), 1 --> (63 downto 32)... 15 --> (511 downto 448)
+                else
+                    -- σ₁(Wₜ₋₂)
+                    s_sigma1_i <= s_W(s_counter_o - 2);
+
+                    -- σ₀(Wₜ₋₁₅)
+                    s_sigma0_i <= s_W(s_counter_o - 15);
+                
+                    -- σ₁(Wₜ₋₂) + Wₜ₋₇
+                    s_soma1_a_i <= s_sigma1_o;
+                    s_soma1_b_i <= s_W(s_counter_o - 7);
+
+                    -- σ₀(Wₜ₋₁₅) + Wₜ₋₁₆
+                    s_soma2_a_i <= s_sigma0_o;
+                    s_soma2_b_i <= s_W(s_counter_o - 16);
+
+                    -- Wₜ = σ₁(Wₜ₋₂) + Wₜ₋₇ + σ₀(Wₜ₋₁₅) + Wₜ₋₁₆
+                    s_soma3_a_i <= s_soma1_sum_x;
+                    s_soma3_b_i <= s_soma1_sum_x;
+                    s_W(s_counter_o) <= s_soma3_r_o;
+                end if;
+
+                s_sf_a_i <= const_H(1)
+
+                s_kpw_i <= s_W(s_counter_o) + const_K(s_counter_o);
+
+                -- FIXME: Talvez concatenação não organize os bits na moral!
+            s_HASO <= 
+                    const_H(0) & const_H(1) & const_H(2) & const_H(3) &
+                    const_H(4) & const_H(5) & const_H(6) & const_H(7) when done = '0' else
+                    
+                    s_sf_a_o & s_sf_b_o & s_sf_c_o & s_sf_d_o & 
+                    s_sf_e_o & s_sf_f_o & s_sf_g_o & s_sf_h_o         when done = '1';
         end if;
     end process;
 
-    done <= s_counter_o = 63;
+    done <= (s_counter_o = 63);
     haso <= s_HASO;
 end architecture;
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+--! @brief 32-bit Adder w/ no carry
+--! @details 
+entity adder32 is
+    port (
+        a     :  in bit_vector (31 downto 0);
+        b     :  in bit_vector (31 downto 0);
+        r     : out bit_vector (31 downto 0) -- a + b
+    );
+end adder32;
+
+-------------------------------------------------------------------------------
+
+architecture adder32_arch of adder32 is
+
+    signal s_sum : bit_vector (31 downto 0);
+
+begin
+
+    s_sum <= ('0' & a) + ('0' & b);
+
+    r <= s_sum(31 downto 0);
+    -- carry_o <= s_sum(32);
+end architecture;
+
 

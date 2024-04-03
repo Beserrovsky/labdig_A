@@ -1,0 +1,2 @@
+# Ignore GHDL generated files
+**/*.cf
