@@ -1,43 +1,3 @@
---! Standard library
-library IEEE;
---! Standard packages
-use IEEE.std_logic_1164.ALL;
--------------------------------------------------------------------------------
--- --
--- USP, PCS3335 - Laboratório Digital A --
--- --
--------------------------------------------------------------------------------
---
--- unit name: Multi StepFunctions (multisteps)
---
---! @file multisteps.vhd
---! @brief SHA-256 Hashing
---! SHA-256 Hashing for 512 bits
---
---! @author Felipe Beserra (felipebeserra25@usp.br)
---! @author Renato Ferreira (renato.ferreiraspfc@usp.br)
---
---! @date <01\04\2024>
---
---! @version <v0.1>
---
---! @details
---!
---! <b>Dependencies:</b>\n
---! stepfun.vhd
---! contador.vhd
---! funcs.vhd
---
--------------------------------------------------------------------------------
---! @todo Etender cálculos \n
---! Add Contador \n
---! Testar com testbench \n
---! CHALLENGE: Use registers? \n
---
--------------------------------------------------------------------------------
-
---! @brief SHA-256 MultiStepsFunctions
---! @details 64 clock cycles, hashes 512 bits
 entity multisteps is
     port (
         clk, rst : in bit; -- Clock, Reset
@@ -70,7 +30,7 @@ architecture multisteps_arch of multisteps is
     
     -- counter signals
     signal s_counter_en, s_counter_reset : bit;
-    signal s_counter_o : bit_vector(5 downto 0);
+    signal s_counter_o : natural range 0 to 63;
 
     -- stepfun component
     component stepfun is
@@ -81,12 +41,7 @@ architecture multisteps_arch of multisteps is
         );
     end component;
 
-    -- stepfun signals
-    signal s_a_i, s_b_i, s_c_i, s_d_i, s_e_i, s_f_i, s_g_i, s_h_i : bit_vector(31 downto 0); 
-    signal s_kpw_i                                                : bit_vector(31 downto 0);
-    signal s_a_o, s_b_o, s_c_o, s_d_o, s_e_o, s_f_o, s_g_o, s_h_o : bit_vector(31 downto 0); 
-    
-    -- funcs components
+    -- sigma0 component
     component sigma0 is
         port(
             x_i:  in bit_vector (31 downto 0);
@@ -94,6 +49,7 @@ architecture multisteps_arch of multisteps is
         );
     end component;
     
+    -- sigma1 component
     component sigma1 is
         port(
             x_i:  in bit_vector (31 downto 0);
@@ -101,6 +57,7 @@ architecture multisteps_arch of multisteps is
         );
     end component;
 
+    -- somador component
     component somador is
         port (
             x_i :      in bit_vector (31 downto 0);
@@ -111,8 +68,8 @@ architecture multisteps_arch of multisteps is
     end component;
 
     -- funcs signals
-    signal s_sigma0_i, s_sigma1_i :                                   bit_vector(31 downto 0);
-    signal s_sigma0_o, s_sigma1_o :                                   bit_vector(31 downto 0);
+    signal s_sigma0_i, s_sigma1_i : bit_vector(31 downto 0);
+    signal s_sigma0_o, s_sigma1_o : bit_vector(31 downto 0);
     signal s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o : bit_vector(31 downto 0);
     signal s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o : bit_vector(31 downto 0);
     signal s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o : bit_vector(31 downto 0);
@@ -122,64 +79,60 @@ architecture multisteps_arch of multisteps is
     signal s_HASO : bit_vector(255 downto 0);
 begin
 
-    -- contador.vhd
-    COUNTER_PM: counter port map (
-        clk, s_counter_reset, s_counter_en,
-        s_counter_o
-    );
-
     -- stepfun.vhd
     STEPFUN_PM: stepfun port map (
         s_a_i, s_b_i, s_c_i, s_d_i, s_e_i, s_f_i, s_g_i, s_h_i, s_kpw_i,
         s_a_o, s_b_o, s_c_o, s_d_o, s_e_o, s_f_o, s_g_o, s_h_o
     );
 
-    -- funcs.vhd
+    -- sigma0.vhd
     SIGMA0_PM: sigma0 port map (s_sigma0_i, s_sigma0_o); -- σ₀(s_sigma0_i)
+    -- sigma1.vhd
     SIGMA1_PM: sigma1 port map (s_sigma1_i, s_sigma1_o); -- σ₁(s_sigma1_i)
 
+    -- somador.vhd
     SOMA1_PM: somador port map (s_soma1_x_i, s_soma1_y_i, s_soma1_carry_o, s_soma1_sum_o);
     SOMA2_PM: somador port map (s_soma2_x_i, s_soma2_y_i, s_soma2_carry_o, s_soma2_sum_o);
     SOMA3_PM: somador port map (s_soma3_x_i, s_soma3_y_i, s_soma3_carry_o, s_soma3_sum_o);
 
     process (clk, rst, msgi)
+    begin
         if rst = '1' then
             -- reset: HASH_Out = Constante H
             s_HASO <= const_H(0) & const_H(1) & const_H(2) & const_H(3) &
                       const_H(4) & const_H(5) & const_H(6) & const_H(7);
-        elsif (clk'event and clk = '1') then
+            s_counter_o <= 0;
+        elsif rising_edge(clk) then
             if s_counter_o < 16 then
                 -- Wₜ = Mₜ (16 primeiros blocos de 32 bits de MSG_INPUT)
-                s_W(s_counter_o) <= msgi(((s_counter_o * 32) + 31) downto ((s_counter_o - 1) * 32));
-                    -- 0 --> (31 downto 0), 1 --> (63 downto 32)... 15 --> (511 downto 448)
+                s_W(s_counter_o) <= msgi((s_counter_o * 32 + 31) downto (s_counter_o * 32));
             else
                 -- σ₁(Wₜ₋₂)
                 s_sigma1_i <= s_W(s_counter_o - 2);
-
                 -- σ₀(Wₜ₋₁₅)
                 s_sigma0_i <= s_W(s_counter_o - 15);
             
                 -- σ₁(Wₜ₋₂) + Wₜ₋₇
                 s_soma1_x_i <= s_sigma1_o;
                 s_soma1_y_i <= s_W(s_counter_o - 7);
-
                 -- σ₀(Wₜ₋₁₅) + Wₜ₋₁₆
                 s_soma2_x_i <= s_sigma0_o;
                 s_soma2_y_i <= s_W(s_counter_o - 16);
-
+            
                 -- Wₜ = σ₁(Wₜ₋₂) + Wₜ₋₇ + σ₀(Wₜ₋₁₅) + Wₜ₋₁₆
-                s_soma3_x_i <= s_soma1_sum_x;
-                s_soma3_y_i <= s_soma1_sum_x;
-                s_W(s_counter_o) <= s_soma3_sum_o;
+                s_soma1_sum_o <= s_soma1_x_i + s_soma1_y_i;
+                s_soma2_sum_o <= s_soma2_x_i + s_soma2_y_i;
+                s_W(s_counter_o) <= s_soma1_sum_o + s_soma2_sum_o;
             end if;
 
             s_kpw_i <= s_W(s_counter_o) + const_K(s_counter_o);
+            s_counter_o <= s_counter_o + 1;
 
             s_HASO <= s_a_o & s_b_o & s_c_o & s_d_o & 
                       s_e_o & s_f_o & s_g_o & s_h_o;
         end if;
     end process;
 
-    done <= s_counter_o = 63;
+    done <= s_counter_o = 64;
     haso <= s_HASO;
 end architecture;
