@@ -1,3 +1,45 @@
+--! Standard library
+library IEEE;
+--! Standard packages
+use IEEE.std_logic_1164.ALL;
+-------------------------------------------------------------------------------
+-- --
+-- USP, PCS3335 - Laboratório Digital A --
+-- --
+-------------------------------------------------------------------------------
+--
+-- unit name: Multi StepFunctions (multisteps)
+--
+--! @file multisteps.vhd
+--! @brief SHA-256 Hashing
+--! SHA-256 Hashing for 512 bits
+--
+--! @author Felipe Beserra (felipebeserra25@usp.br)
+--! @author Renato Ferreira (renato.ferreiraspfc@usp.br)
+--
+--! @date <01\04\2024>
+--
+--! @version <v0.1>
+--
+--! @details
+--!
+--! <b>Dependencies:</b>\n
+--! stepfun.vhd
+--! contador.vhd
+--! funcs.vhd
+--
+-------------------------------------------------------------------------------
+--! @todo Etender cálculos \n
+--! Add Contador \n
+--! Testar com testbench \n
+--! CHALLENGE: Use registers? \n
+--
+-------------------------------------------------------------------------------
+
+--! @brief SHA-256 MultiStepsFunctions
+--! @details 64 clock cycles, hashes 512 bits
+
+
 entity multisteps is
     port (
         clk, rst : in bit; -- Clock, Reset
