@@ -55,4 +55,3 @@ begin
     counter_o <= bit_vector(s_counter);
 
 end architecture;
-

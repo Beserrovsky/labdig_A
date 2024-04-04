@@ -26,13 +26,14 @@ use IEEE.std_logic_1164.ALL;
 
 entity stepfun is
     port (
-        ai, bi, ci, di, ei, fi, gi, hi :  in bit_vector(31 downto 0);
-        kpw :                             in bit_vector(31 downto 0);
+        ai, bi, ci, di, ei, fi, gi, hi :  in  bit_vector(31 downto 0); 
+        kpw                            :  in  bit_vector(31 downto 0);
         ao, bo, co, do, eo, fo, go, ho : out bit_vector(31 downto 0)
     );
 end stepfun;
 
 architecture stepfun_arch of stepfun is
+
     component ch is 
         port (
             x, y, z : in bit_vector(31 downto 0);
@@ -60,44 +61,28 @@ architecture stepfun_arch of stepfun is
             q : out bit_vector(31 downto 0)
         );
     end component;
-    
-    component adder32 is
-        port (
-            a     :  in bit_vector (31 downto 0);
-            b     :  in bit_vector (31 downto 0);
-            r     : out bit_vector (31 downto 0) -- a + b
-        );
-    end component;
-    
-    -- comum aas duas saidas
-    signal sum_ei, ch_c, hi_soma_kpw, scomum1, scomum2, comum: bit_vector(31 downto 0); 
-    
-    -- somas que formam o e0
-    signal e0f: bit_vector(31 downto 0); 
-    
-    -- somas que formam o a0
-    signal a0maj, a0sum0, s1a0, a0f: bit_vector(31 downto 0); 
-    begin
-        -- calculo do termo em comum
-        CHcomum: ch port map(ei, fi, gi, ch_c);
-        sum1comum: sum1 port map(ei, sum_ei);
-        somacomum1: adder32 port map(x=>hi, y=>kpw, q=>scomum1);
-        somacomum2: adder32 port map(x=>sum_ei, y=>ch_c, q=>scomum2);
-        somacomum: adder32 port map(x=>scomum1, y=>scomum2, q=>comum);
-        -- calculo de e0:
-        somae0: adder32 port map(x=>di, y=>comum, q=>e0f);
-        -- calculo de a0:
-        sum0a0: sum0 port map(ai, a0sum0);
-        maja0: maj port map(ai, bi, ci, a0maj);
-        soma1a0: adder32 port map(x=>a0maj, y=>a0sum0, q=>s1a0);
-        somaa0: adder32 port map(x=>s1a0, y=>comum, q=>a0f);
 
-        eo <= e0f;
-        ao <= a0f;
+	signal somaAux: unsigned(31 downto 0);
+	signal ch_out, maj_out, sum0_out, sum1_out: bit_vector(31 downto 0);
+	
+	begin
+
+		ch0:   ch   port map(ei, fi, gi, ch_out);
+		maj0:  maj  port map(ai, bi, ci, maj_out);
+		sum00: sum0 port map(ai, sum0_out);
+		sum10: sum1 port map(ei, sum1_out);
+		
+		somaAux <= unsigned(sum1_out) + unsigned(ch_out) + unsigned(hi) + unsigned(kpw);
+		
+        eo <= bit_vector(somaAux + unsigned(di));
+        ao <= bit_vector(somaAux + unsigned(maj_out) + unsigned(sum0_out));
+
+        -- As outras saidas corresspondem ao elemento anterior das entradas
         bo <= ai;
-        co <= bi;
-        do <= ci;
-        fo <= ei;
-        go <= fi;
-        ho <= gi;
+		co <= bi;
+		do <= ci;
+		fo <= ei;
+		go <= fi;
+		ho <= gi;
+		
 end architecture;
