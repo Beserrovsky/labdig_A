@@ -1,6 +1,6 @@
 library IEEE;
-	use IEEE.STD_LOGIC_1164.ALL;
-	use IEEE.numeric_std.ALL;
+	  use IEEE.STD_LOGIC_1164.ALL;
+	  use IEEE.numeric_std.ALL;
 
 entity FPGA is
   port (
@@ -29,7 +29,7 @@ architecture arch_FPGA of FPGA is
   end component;
 
   signal s_reset, s_start : bit;
-  signal s_clk48000, s_clk19200 : bit;
+  signal s_clk19200 : bit;
 
   signal s_serial_data : bit;
 
@@ -37,13 +37,9 @@ architecture arch_FPGA of FPGA is
   signal s_parallel_data : bit_vector(7 downto 0)
 begin
 
-  D_CLOCKDIVIDER_1: clock_divider
-    generic map (IN_FREQ:=50000, OUT_FREQ=4800)
+  D_CLOCKDIVIDER: clock_divider
+    generic map (IN_FREQ:=50000000, OUT_FREQ=19200)
     port map (clk_i, s_reset, s_clk48000);
-
-  D_CLOCKDIVIDER_2: clock_divider
-    generic map (IN_FREQ:=4800, OUT_FREQ=1920)
-    port map (s_clk48000, s_reset, s_clk19200);
 
   D_SERIAL_IN : serial_in
     port map (s_clk19200, s_reset, s_start, s_serial_data

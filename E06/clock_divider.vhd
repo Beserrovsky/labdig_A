@@ -4,8 +4,8 @@ library IEEE;
   
 entity clock_divider is
   generic (
-    IN_FREQ :  positive := 50000; -- 50 MHz
-    OUT_FREQ : positive := 4800   -- 4800 bps
+    IN_FREQ :  positive := 50000000; -- 50 MHz
+    OUT_FREQ : positive := 4800      -- 4800 bps
   );
 	port (
 		clk_i, reset_i : in bit;
