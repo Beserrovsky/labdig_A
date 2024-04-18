@@ -4,11 +4,15 @@ library IEEE;
 
 entity FPGA is
   port (
-    clk_i :  in bit; -- 50 MHZ
-    SW_i :   in bit_vector(10 downto 0);
-    BTN_i :  in bit_vector(4 downto 0);
+    CLOCK_50 : in bit; -- 50 MHZ
     
-    LED_o : out bit_vector(9 downto 0)
+    SW :     in bit_vector(9 downto 0);
+    GPIO_0 : in bit_vector(35 downto 0);
+    
+    GPIO_1 : out bit_vector(35 downto 0);
+    LEDR :   out bit_vector(9 downto 0);
+    HEX0 :   out bit_vector(6 downto 0);
+    KEY :    out bit_vector(3 downto 0);
   ) ;
 end FPGA;
 
@@ -39,7 +43,7 @@ begin
 
   D_CLOCKDIVIDER: clock_divider
     generic map (IN_FREQ:=50000000, OUT_FREQ=19200)
-    port map (clk_i, s_reset, s_clk48000);
+    port map (CLOCK_50, s_reset, s_clk48000);
 
   D_SERIAL_IN : serial_in
     port map (s_clk19200, s_reset, s_start, s_serial_data
