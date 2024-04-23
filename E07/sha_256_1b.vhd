@@ -75,75 +75,56 @@ begin
     
 begin
 
-    -- Instantiate serial_in
-    serial_in_inst : serial_in
-        generic map (
-            POLARITY => TRUE,
-            WIDTH => 8, -- 8 bits for 1 byte
-            PARITY => 1,
-            CLOCK_MUL => 4 -- Adjust this according to your clock requirements
-        )
-        port map (
-            clock => serial_in_clock,
-            reset => serial_in_reset,
-            start => serial_in_start,
-            serial_data => serial_in_serial_data,
-            done => serial_in_done,
-            parity_bit => serial_in_parity_bit,
-            parallel_data => serial_in_parallel_data
-        );
-
-    -- Instantiate multisteps
-    multisteps_inst : multisteps
-        port map (
-            clk => multisteps_clock,
-            rst => multisteps_reset,
-            msgi => multisteps_msgi,
-            haso => multisteps_haso,
-            done => multisteps_done
-        );
-
     -- Process for receiving byte from serial_in and calculating hash
     process (clock)
     begin
         if rising_edge(clock) then
-            -- Check if we have a new byte
-            if serial_in_done = '1' then
-                -- Reset serial_in_done for next byte
-                serial_in_done <= '0';
-                
-                -- Get the received byte
-                current_byte <= serial_in_parallel_data;
-                received_bytes <= received_bytes + 1;
-                
-                -- Start the calculation if not started
-                if not calculation_started then
-                    -- Initialize multisteps_msgi with zeros
-                    multisteps_msgi <= (others => '0');
-                    -- Start calculation with the received byte
-                    multisteps_msgi(7 downto 0) <= current_byte;
-                    calculation_started <= true;
-                else
-                    -- Add the received byte to the ongoing calculation
-                    multisteps_msgi(7 + received_bytes*8 downto received_bytes*8) <= current_byte;
-                end if;
-                
-                -- Reset wait counter
+            -- Check for asynchronous reset
+            if serial_in_reset = '1' then
+                -- Reset internal state
+                calculation_started <= false;
+                received_bytes <= 0;
                 wait_counter <= 0;
-                
             else
-                -- If no new byte received, check if we should end calculation
-                if calculation_started and wait_counter < MAX_WAIT_CYCLES then
-                    wait_counter <= wait_counter + 1;
-                end if;
-                
-                -- If calculation done, transmit least significant byte of hash
-                if multisteps_done = '1' then
-                    -- Transmit least significant byte of hash
-                    serial_out_data <= multisteps_haso(7 downto 0);
-                    -- Reset for next calculation
-                    calculation_started <= false;
-                    received_bytes <= 0;
+                -- Check if we have a new byte
+                if serial_in_done = '1' then
+                    -- Reset serial_in_done for next byte
+                    serial_in_done <= '0';
+                    
+                    -- Get the received byte
+                    current_byte <= serial_in_parallel_data;
+                    received_bytes <= received_bytes + 1;
+                    
+                    -- Start the calculation if not started
+                    if not calculation_started then
+                        -- Initialize multisteps_msgi with zeros
+                        multisteps_msgi <= (others => '0');
+                        -- Start calculation with the received byte
+                        multisteps_msgi(7 downto 0) <= current_byte;
+                        calculation_started <= true;
+                    else
+                        -- Add the received byte to the ongoing calculation
+                        multisteps_msgi(7 + received_bytes*8 downto received_bytes*8) <= current_byte;
+                    end if;
+                    
+                    -- Reset wait counter
+                    wait_counter <= 0;
+                    
+                else
+                    -- If no new byte received, check if we should end calculation
+                    if calculation_started and wait_counter < MAX_WAIT_CYCLES then
+                        wait_counter <= wait_counter + 1;
+                    end if;
+                    
+                    -- If calculation done, transmit least significant byte of hash
+                    if multisteps_done = '1' then
+                        -- Transmit least significant byte of hash
+                        -- Assuming serial_out_data is the output data signal
+                        serial_out_data <= multisteps_haso(7 downto 0);
+                        -- Reset for next calculation
+                        calculation_started <= false;
+                        received_bytes <= 0;
+                    end if;
                 end if;
             end if;
         end if;
@@ -159,15 +140,12 @@ begin
     serial_in_start <= '1' when received_bytes = 0 else '0';
 
     -- Connect serial_out_tx_go, serial_out_data, and serial_out_reset based on internal signals
-    serial_out_tx_go <= calculation_started;
-    serial_out_data <= '0'; -- You need to define this based on your serial_out component
-    serial_out_reset <= reset;
+    -- You need to define these signals based on your serial_out component
+    -- serial_out_tx_go <= calculation_started;
+    -- serial_out_data <= '0';
+    -- serial_out_reset <= reset;
 
-
-
-
-end architecture;
-
+end behavior;
 
 
 
