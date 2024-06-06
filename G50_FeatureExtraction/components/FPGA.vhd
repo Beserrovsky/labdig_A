@@ -4,23 +4,23 @@ library IEEE;
 
 entity FPGA is -- "Terasic DE0-CV" - 5CEBA4F23C7N 
   port (
-    CLOCK_50 : in bit; -- 50 MHZ
+    CLOCK_50 : in std_logic; -- 50 MHZ
 
-    SW :     in bit_vector(9 downto 0);
-    GPIO_0 : in bit_vector(35 downto 0);
+    SW :       in std_logic_vector(9 downto 0);
+    GPIO_0 :   in std_logic_vector(35 downto 0);
 
-    GPIO_1 : out bit_vector(35 downto 0);
-    LEDR :   out bit_vector(9 downto 0);
-    HEX0 :   out bit_vector(6 downto 0);
-    KEY :    out bit_vector(3 downto 0);
+    GPIO_1 :  out std_logic_vector(35 downto 0);
+    LEDR :    out std_logic_vector(9 downto 0);
+    HEX0 :    out std_logic_vector(6 downto 0);
+    KEY :     out std_logic_vector(3 downto 0);
 
-    VGA_HS : out std_logic;
-    VGA_VS : out std_logic;
-    VGA_R  : out std_logic_vector(3 downto 0);
-    VGA_G  : out std_logic_vector(3 downto 0);
-    VGA_B  : out std_logic_vector(3 downto 0)
+    VGA_HS :  out std_logic;
+    VGA_VS :  out std_logic;
+    VGA_R  :  out std_logic_vector(3 downto 0);
+    VGA_G  :  out std_logic_vector(3 downto 0);
+    VGA_B  :  out std_logic_vector(3 downto 0)
   ) ;
-end FPGA;
+end entity FPGA;
 
 -- TODO:
 --
@@ -56,39 +56,41 @@ architecture arch_FPGA of FPGA is
       
       data_o : out std_logic_vector(7 downto 0)
     );
-  end component;
-
+  end component OV7670;
+  
   signal s_camdata : std_logic_vector(7 downto 0);
 
   component VGA is
-    generic( --for 800 x 600 @ 72 Hz 50.0 MHz
-      h_polarity        : boolean := true;
-      h_display         : integer := 800;
-      h_front_porch     : integer := 56;
-      h_sync_pulse_time : integer := 120;
-      h_back_porch      : integer := 64;
-
-      v_polarity        : boolean := true;
-      v_display         : integer := 600;
-      v_front_porch     : integer := 37;
-      v_sync_pulse_time : integer := 6;
-      v_back_porch      : integer := 23
+    generic( --for 800 x_o 600 @ 72 Hz 50.0 MHz
+      g_hpolarity        : boolean := true;
+      g_hdisplay         : integer := 800;
+      g_hfront_porch     : integer := 56;
+      g_hsync_pulse_time : integer := 120;
+      g_hback_porch      : integer := 64;
+  
+      g_vpolarity        : boolean := true;
+      g_vdisplay         : integer := 600;
+      g_vfront_porch     : integer := 37;
+      g_vsync_pulse_time : integer := 6;
+      g_vback_porch      : integer := 23
     );
     port (  
-      clock : in  std_logic;
-
-      in_s_red   : in std_logic_vector(3 downto 0); --tests 
-      in_s_green : in std_logic_vector(3 downto 0); --tests 
-      in_s_blue  : in std_logic_vector(3 downto 0); --tests 
-      hsync : out std_logic;
-      vsync : out std_logic;
-      red   : out std_logic_vector(3 downto 0); 
-      green : out std_logic_vector(3 downto 0);
-      s_blue  : out std_logic_vector(3 downto 0);
-          x: out integer;
-          y: out integer
+      clk_i : in  std_logic;
+      red_i   : in std_logic_vector(3 downto 0); --tests 
+      green_i : in std_logic_vector(3 downto 0); --tests 
+      blue_i  : in std_logic_vector(3 downto 0); --tests 
+  
+      hsync_o : out std_logic;
+      vsync_o : out std_logic;
+  
+      red_o   : out std_logic_vector(3 downto 0); 
+      green_o : out std_logic_vector(3 downto 0);
+      blue_o  : out std_logic_vector(3 downto 0);
+      
+      x_o     : out integer;
+      y_o     : out integer
     );
-  end component;
+  end component VGA;
 
   signal s_red   : std_logic_vector(3 downto 0); 
   signal s_green : std_logic_vector(3 downto 0);
@@ -98,47 +100,51 @@ architecture arch_FPGA of FPGA is
 
   begin
 
-    D_DIVIDER: clock_divider
-      generic map (DIVIDER:=1)
+    CLK_DIV_50_25: clock_divider
+      generic map (DIVIDER => 1)
       port map (CLOCK_50, s_reset, s_clk25);
 
-    D_OV7670: OV7670
+    CAM_OV7670: OV7670
       port map (
-        s_clk25,
-        s_reset,
-        GPIO_0(0),
-        GPIO_0(1),
-        GPIO_0(2),
-        GPIO_0(3 downto 0),
-        s_camdata
+        clk_i   => s_clk25,
+        rst_i   => s_reset,
+        vsync_i => GPIO_0(0),
+        href_i  => GPIO_0(1),
+        pclk_i  => GPIO_0(2),
+        data_i  => GPIO_0(10 downto 3),
+
+        data_o  => s_camdata
       );
     
-    D_VGA: VGA
+    VGA_OUT: VGA
       generic map (
-        h_polarity        => true,
-        h_display         => 800,
-        h_front_porch     => 56,
-        h_sync_pulse_time => 120,
-        h_back_porch      => 64,
+        g_hpolarity        => true,
+        g_hdisplay         => 800,
+        g_hfront_porch     => 56,
+        g_hsync_pulse_time => 120,
+        g_hback_porch      => 64,
 
-        v_polarity        => true,
-        v_display         => 600,
-        v_front_porch     => 37,
-        v_sync_pulse_time => 6,
-        v_back_porch      => 23
+        g_vpolarity        => true,
+        g_vdisplay         => 600,
+        g_vfront_porch     => 37,
+        g_vsync_pulse_time => 6,
+        g_vback_porch      => 23
       )
       port map (
-        s_clk25,
-        s_red,
-        s_green,
-        s_blue,
-        VGA_HS,
-        VGA_VS,
-        VGA_R,
-        VGA_G,
-        VGA_B,
-        s_x,
-        s_y
+        clk_i   => s_clk25,
+        red_i   => s_red,
+        green_i => s_green,
+        blue_i  => s_blue,
+        
+        hsync_o => VGA_HS,
+        vsync_o => VGA_VS,
+
+        red_o   => VGA_R,
+        green_o => VGA_G,
+        blue_o  => VGA_B,
+        
+        x_o => s_x,
+        y_o => s_y
       );
 
-end arch_FPGA ; -- arch_FPGA
+end architecture arch_FPGA ; -- arch_FPGA
