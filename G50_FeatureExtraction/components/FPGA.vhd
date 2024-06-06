@@ -1,3 +1,5 @@
+
+
 library IEEE;
     use IEEE.STD_LOGIC_1164.ALL;
     use IEEE.numeric_std.ALL;
@@ -108,7 +110,7 @@ architecture arch_FPGA of FPGA is
       port map (
         clk_i   => s_clk25,
         rst_i   => s_reset,
-        vsync_i => GPIO_0(0),
+        vsync_i => GPIO_0(0), 
         href_i  => GPIO_0(1),
         pclk_i  => GPIO_0(2),
         data_i  => GPIO_0(10 downto 3),
@@ -132,9 +134,9 @@ architecture arch_FPGA of FPGA is
       )
       port map (
         clk_i   => s_clk25,
-        red_i   => s_red,
-        green_i => s_green,
-        blue_i  => s_blue,
+        red_i   => s_camdata(11 downto 8),
+        green_i => s_camdata(7 downto 4),
+        blue_i  => s_camdata(3 downto 0),
         
         hsync_o => VGA_HS,
         vsync_o => VGA_VS,
