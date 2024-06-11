@@ -8,7 +8,7 @@ library IEEE;
 
 entity ov7670_top is
     Port ( 
-      CLOCK_50        : in    STD_LOGIC;
+      CLOCK_50     : in    STD_LOGIC;
       OV7670_SIOC  : out   STD_LOGIC;
       OV7670_SIOD  : inout STD_LOGIC;
       OV7670_RESET : out   STD_LOGIC;
