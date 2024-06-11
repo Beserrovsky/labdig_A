@@ -79,7 +79,6 @@ architecture Behavioral of ov7670_top is
       );
    END COMPONENT;
 
-
    COMPONENT vga
    PORT(
       clk50 : IN std_logic;
@@ -132,19 +131,7 @@ fb : frame_buffer
     rdaddress => frame_addr,
     q => frame_pixel
   );
- 
--- fb : frame_buffer
---   PORT MAP (
---     clka  => OV7670_PCLK,
---     wea   => capture_we,
---     addra => capture_addr,
---     dina  => capture_data,
-    
---     clkb  => CLOCK_50,
---     addrb => frame_addr,
---     doutb => frame_pixel
---   ); 
-  
+
 LEDR <= "000000000" & config_finished;
   
 capture: ov7670_capture PORT MAP(
