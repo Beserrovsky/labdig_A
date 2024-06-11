@@ -1,0 +1,39 @@
+	frame_buffer u0 (
+		.alt_vip_cl_vfb_0_main_reset_reset            (<connected-to-alt_vip_cl_vfb_0_main_reset_reset>),            //    alt_vip_cl_vfb_0_main_reset.reset
+		.alt_vip_cl_vfb_0_mem_reset_reset             (<connected-to-alt_vip_cl_vfb_0_mem_reset_reset>),             //     alt_vip_cl_vfb_0_mem_reset.reset
+		.clk_clk                                      (<connected-to-clk_clk>),                                      //                            clk.clk
+		.reset_reset_n                                (<connected-to-reset_reset_n>),                                //                          reset.reset_n
+		.alt_vip_cl_vfb_0_din_data                    (<connected-to-alt_vip_cl_vfb_0_din_data>),                    //           alt_vip_cl_vfb_0_din.data
+		.alt_vip_cl_vfb_0_din_valid                   (<connected-to-alt_vip_cl_vfb_0_din_valid>),                   //                               .valid
+		.alt_vip_cl_vfb_0_din_startofpacket           (<connected-to-alt_vip_cl_vfb_0_din_startofpacket>),           //                               .startofpacket
+		.alt_vip_cl_vfb_0_din_endofpacket             (<connected-to-alt_vip_cl_vfb_0_din_endofpacket>),             //                               .endofpacket
+		.alt_vip_cl_vfb_0_din_ready                   (<connected-to-alt_vip_cl_vfb_0_din_ready>),                   //                               .ready
+		.alt_vip_cl_vfb_0_mem_master_wr_address       (<connected-to-alt_vip_cl_vfb_0_mem_master_wr_address>),       // alt_vip_cl_vfb_0_mem_master_wr.address
+		.alt_vip_cl_vfb_0_mem_master_wr_burstcount    (<connected-to-alt_vip_cl_vfb_0_mem_master_wr_burstcount>),    //                               .burstcount
+		.alt_vip_cl_vfb_0_mem_master_wr_waitrequest   (<connected-to-alt_vip_cl_vfb_0_mem_master_wr_waitrequest>),   //                               .waitrequest
+		.alt_vip_cl_vfb_0_mem_master_wr_write         (<connected-to-alt_vip_cl_vfb_0_mem_master_wr_write>),         //                               .write
+		.alt_vip_cl_vfb_0_mem_master_wr_writedata     (<connected-to-alt_vip_cl_vfb_0_mem_master_wr_writedata>),     //                               .writedata
+		.alt_vip_cl_vfb_0_mem_master_wr_byteenable    (<connected-to-alt_vip_cl_vfb_0_mem_master_wr_byteenable>),    //                               .byteenable
+		.alt_vip_cl_vfb_0_mem_clock_clk               (<connected-to-alt_vip_cl_vfb_0_mem_clock_clk>),               //     alt_vip_cl_vfb_0_mem_clock.clk
+		.alt_vip_cl_vfb_0_main_clock_clk              (<connected-to-alt_vip_cl_vfb_0_main_clock_clk>),              //    alt_vip_cl_vfb_0_main_clock.clk
+		.alt_vip_cl_vfb_0_dout_data                   (<connected-to-alt_vip_cl_vfb_0_dout_data>),                   //          alt_vip_cl_vfb_0_dout.data
+		.alt_vip_cl_vfb_0_dout_valid                  (<connected-to-alt_vip_cl_vfb_0_dout_valid>),                  //                               .valid
+		.alt_vip_cl_vfb_0_dout_startofpacket          (<connected-to-alt_vip_cl_vfb_0_dout_startofpacket>),          //                               .startofpacket
+		.alt_vip_cl_vfb_0_dout_endofpacket            (<connected-to-alt_vip_cl_vfb_0_dout_endofpacket>),            //                               .endofpacket
+		.alt_vip_cl_vfb_0_dout_ready                  (<connected-to-alt_vip_cl_vfb_0_dout_ready>),                  //                               .ready
+		.alt_vip_cl_vfb_0_mem_master_rd_address       (<connected-to-alt_vip_cl_vfb_0_mem_master_rd_address>),       // alt_vip_cl_vfb_0_mem_master_rd.address
+		.alt_vip_cl_vfb_0_mem_master_rd_burstcount    (<connected-to-alt_vip_cl_vfb_0_mem_master_rd_burstcount>),    //                               .burstcount
+		.alt_vip_cl_vfb_0_mem_master_rd_waitrequest   (<connected-to-alt_vip_cl_vfb_0_mem_master_rd_waitrequest>),   //                               .waitrequest
+		.alt_vip_cl_vfb_0_mem_master_rd_read          (<connected-to-alt_vip_cl_vfb_0_mem_master_rd_read>),          //                               .read
+		.alt_vip_cl_vfb_0_mem_master_rd_readdata      (<connected-to-alt_vip_cl_vfb_0_mem_master_rd_readdata>),      //                               .readdata
+		.alt_vip_cl_vfb_0_mem_master_rd_readdatavalid (<connected-to-alt_vip_cl_vfb_0_mem_master_rd_readdatavalid>), //                               .readdatavalid
+		.alt_vip_cl_vfb_0_control_address             (<connected-to-alt_vip_cl_vfb_0_control_address>),             //       alt_vip_cl_vfb_0_control.address
+		.alt_vip_cl_vfb_0_control_byteenable          (<connected-to-alt_vip_cl_vfb_0_control_byteenable>),          //                               .byteenable
+		.alt_vip_cl_vfb_0_control_write               (<connected-to-alt_vip_cl_vfb_0_control_write>),               //                               .write
+		.alt_vip_cl_vfb_0_control_writedata           (<connected-to-alt_vip_cl_vfb_0_control_writedata>),           //                               .writedata
+		.alt_vip_cl_vfb_0_control_read                (<connected-to-alt_vip_cl_vfb_0_control_read>),                //                               .read
+		.alt_vip_cl_vfb_0_control_readdata            (<connected-to-alt_vip_cl_vfb_0_control_readdata>),            //                               .readdata
+		.alt_vip_cl_vfb_0_control_readdatavalid       (<connected-to-alt_vip_cl_vfb_0_control_readdatavalid>),       //                               .readdatavalid
+		.alt_vip_cl_vfb_0_control_waitrequest         (<connected-to-alt_vip_cl_vfb_0_control_waitrequest>)          //                               .waitrequest
+	);
+

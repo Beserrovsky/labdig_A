@@ -1,0 +1,28 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst frame_buffer.alt_vip_cl_vfb_0.sync_ctrl -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.rd_ctrl -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.video_in -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.av_st_clk_bridge -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0 -pg 1 -lvl 2 -y 70
+preplace inst frame_buffer.alt_vip_cl_vfb_0.av_mm_clk_bridge -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.video_out -pg 1
+preplace inst frame_buffer -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst frame_buffer.alt_vip_cl_vfb_0.av_st_reset_bridge -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.av_mm_reset_bridge -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.video_in.reset_bridge -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.video_in.clk_bridge -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.pkt_trans_rd -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.wr_ctrl -pg 1
+preplace inst frame_buffer.clk_0 -pg 1 -lvl 1 -y 70
+preplace inst frame_buffer.alt_vip_cl_vfb_0.pkt_trans_wr -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.video_in.vid_back -pg 1
+preplace inst frame_buffer.alt_vip_cl_vfb_0.video_in.vid_front -pg 1
+preplace netloc EXPORT<net_container>frame_buffer</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)frame_buffer.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>frame_buffer</net_container>(SLAVE)alt_vip_cl_vfb_0.main_reset,(SLAVE)frame_buffer.alt_vip_cl_vfb_0_main_reset) 1 0 2 NJ 140 NJ
+preplace netloc EXPORT<net_container>frame_buffer</net_container>(SLAVE)alt_vip_cl_vfb_0.mem_reset,(SLAVE)frame_buffer.alt_vip_cl_vfb_0_mem_reset) 1 0 2 NJ 180 NJ
+preplace netloc FAN_OUT<net_container>frame_buffer</net_container>(SLAVE)alt_vip_cl_vfb_0.mem_clock,(SLAVE)alt_vip_cl_vfb_0.main_clock,(MASTER)clk_0.clk) 1 1 1 390
+preplace netloc EXPORT<net_container>frame_buffer</net_container>(SLAVE)clk_0.clk_in,(SLAVE)frame_buffer.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>frame_buffer</net_container>(MASTER)alt_vip_cl_vfb_0.mem_master_rd,(SLAVE)alt_vip_cl_vfb_0.control) 1 1 2 410 30 660
+levelinfo -pg 1 0 180 700
+levelinfo -hier frame_buffer 190 220 500 680

@@ -1,0 +1,1784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2024.06.11.11:08:13"
+ outputDirectory="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CEBA4F23C7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_RD_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_RD_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_WR_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_WR_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="alt_vip_cl_vfb_0_control" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="64" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_main_clock" />
+   <property name="associatedReset" value="alt_vip_cl_vfb_0_main_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="2" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="0" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="alt_vip_cl_vfb_0_control_address"
+       direction="input"
+       role="address"
+       width="4" />
+   <port
+       name="alt_vip_cl_vfb_0_control_byteenable"
+       direction="input"
+       role="byteenable"
+       width="4" />
+   <port
+       name="alt_vip_cl_vfb_0_control_write"
+       direction="input"
+       role="write"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_control_writedata"
+       direction="input"
+       role="writedata"
+       width="32" />
+   <port
+       name="alt_vip_cl_vfb_0_control_read"
+       direction="input"
+       role="read"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_control_readdata"
+       direction="output"
+       role="readdata"
+       width="32" />
+   <port
+       name="alt_vip_cl_vfb_0_control_readdatavalid"
+       direction="output"
+       role="readdatavalid"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_control_waitrequest"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_din" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_main_clock" />
+   <property name="associatedReset" value="alt_vip_cl_vfb_0_main_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="4" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="1" />
+   <property name="symbolsPerBeat" value="3" />
+   <port
+       name="alt_vip_cl_vfb_0_din_data"
+       direction="input"
+       role="data"
+       width="12" />
+   <port
+       name="alt_vip_cl_vfb_0_din_valid"
+       direction="input"
+       role="valid"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_din_startofpacket"
+       direction="input"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_din_endofpacket"
+       direction="input"
+       role="endofpacket"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_din_ready"
+       direction="output"
+       role="ready"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_dout" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_main_clock" />
+   <property name="associatedReset" value="alt_vip_cl_vfb_0_main_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="4" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="1" />
+   <property name="symbolsPerBeat" value="3" />
+   <port
+       name="alt_vip_cl_vfb_0_dout_data"
+       direction="output"
+       role="data"
+       width="12" />
+   <port
+       name="alt_vip_cl_vfb_0_dout_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_dout_startofpacket"
+       direction="output"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_dout_endofpacket"
+       direction="output"
+       role="endofpacket"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_dout_ready"
+       direction="input"
+       role="ready"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_main_clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port
+       name="alt_vip_cl_vfb_0_main_clock_clk"
+       direction="input"
+       role="clk"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_main_reset" kind="reset" start="0">
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_main_clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port
+       name="alt_vip_cl_vfb_0_main_reset_reset"
+       direction="input"
+       role="reset"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_mem_clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_clock_clk"
+       direction="input"
+       role="clk"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_mem_master_rd" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_mem_clock" />
+   <property name="associatedReset" value="alt_vip_cl_vfb_0_mem_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="true" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_rd_address"
+       direction="output"
+       role="address"
+       width="32" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_rd_burstcount"
+       direction="output"
+       role="burstcount"
+       width="6" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_rd_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_rd_read"
+       direction="output"
+       role="read"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_rd_readdata"
+       direction="input"
+       role="readdata"
+       width="256" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_rd_readdatavalid"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_mem_master_wr" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_mem_clock" />
+   <property name="associatedReset" value="alt_vip_cl_vfb_0_mem_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="true" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_wr_address"
+       direction="output"
+       role="address"
+       width="32" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_wr_burstcount"
+       direction="output"
+       role="burstcount"
+       width="6" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_wr_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_wr_write"
+       direction="output"
+       role="write"
+       width="1" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_wr_writedata"
+       direction="output"
+       role="writedata"
+       width="256" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_master_wr_byteenable"
+       direction="output"
+       role="byteenable"
+       width="32" />
+  </interface>
+  <interface name="alt_vip_cl_vfb_0_mem_reset" kind="reset" start="0">
+   <property name="associatedClock" value="alt_vip_cl_vfb_0_mem_clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port
+       name="alt_vip_cl_vfb_0_mem_reset_reset"
+       direction="input"
+       role="reset"
+       width="1" />
+  </interface>
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="frame_buffer:1.0:AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_CLOCK_DOMAIN=-1,AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_CLOCK_RATE=-1,AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_RESET_DOMAIN=-1,AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_CLOCK_DOMAIN=-1,AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_CLOCK_RATE=-1,AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_RESET_DOMAIN=-1,AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_RD_ADDRESS_MAP=,AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_RD_ADDRESS_WIDTH=AddressWidth = -1,AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_WR_ADDRESS_MAP=,AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_WR_ADDRESS_WIDTH=AddressWidth = -1,AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1718114892,AUTO_UNIQUE_ID=(alt_vip_cl_vfb:23.1:ACTUAL_MAX_SYM_ANC_PACKET=12,ANC_BUFFER_LENGTH=1024,AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_SPEEDGRADE=7,BITS_PER_SYMBOL=4,BURST_ALIGNMENT=1,CLOCKS_ARE_SEPARATE=1,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTROLLED_DROP_REPEAT=0,DROP_FRAMES=0,DROP_INVALID_FIELDS=0,DROP_REPEAT_USER=0,FAMILY=Cyclone V,FRAME_BUFFER_LENGTH=29696,INTERLACED_SUPPORT=0,IS_FRAME_READER=0,IS_FRAME_WRITER=0,IS_SYNC_MASTER=0,IS_SYNC_SLAVE=0,LINE_BASED_BUFFERING=0,MAX_HEIGHT=120,MAX_SYMBOLS_PER_PACKET=10,MAX_WIDTH=160,MEM_BASE_ADDR=0,MEM_BUFFER_OFFSET=16777216,MEM_PORT_WIDTH=256,MULTI_FRAME_DELAY=1,NUMBER_OF_COLOR_PLANES=3,NUM_BUFFERS=2,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,READER_RUNTIME_CONTROL=0,READY_LATENCY=1,READ_BURST_TARGET=32,READ_FIFO_DEPTH=64,REPEAT_FRAMES=0,TEST_INIT=0,USER_PACKETS_MAX_STORAGE=0,USE_BUFFER_OFFSET=0,WRITER_RUNTIME_CONTROL=1,WRITE_BURST_TARGET=32,WRITE_FIFO_DEPTH=64(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(alt_vip_video_input_bridge:23.1:AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(alt_vip_video_input_bridge_resp:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1)(alt_vip_video_input_bridge_cmd:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,SRC_WIDTH=8,TASK_WIDTH=8)(clock:23.1:)(clock:23.1:)(clock:23.1:)(reset:23.1:)(reset:23.1:)(avalon_streaming:23.1:))(alt_vip_vfb_wr_ctrl:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,MAX_HEIGHT=120,MAX_SYMBOLS_IN_ANC_PACKET=12,MAX_WIDTH=160,NUMBER_OF_COLOR_PLANES=3,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,SRC_WIDTH=8,TASK_WIDTH=8)(alt_vip_packet_transfer:23.1:BURST_ALIGNMENT=1,BURST_TARGET_READ=8,BURST_TARGET_WRITE=32,CLOCKS_ARE_SEPARATE=1,COMB_OUTPUT_READ=0,COMB_OUTPUT_WRITE=0,CONTEXT_BUFFER_RATIO_READ=4,CONTEXT_BUFFER_RATIO_WRITE=2,CONTEXT_WIDTH=8,DATA_WIDTH=12,DOUT_MAX_DESTINATION_ID_NUM_READ=32,DOUT_SOURCE_ID_READ=0,DST_WIDTH=8,ELEMENTS_IN_PARALLEL=1,ENABLE_ADV_SETTING_READ=0,ENABLE_ADV_SETTING_WRITE=0,ENABLE_COMMAND_BUFFER_READ=0,ENABLE_MANY_COMMAND_READ=0,ENABLE_MANY_COMMAND_WRITE=0,ENABLE_MM_OUTPUT_REGISTER=1,ENABLE_PERIOD_MODE_READ=0,ENABLE_PERIOD_MODE_WRITE=0,FAMILY=Cyclone V,LOGIC_ONLY_SCFIFO_READ=1,MAX_CONTEXT_NUMBER_READ=1,MAX_CONTEXT_NUMBER_WRITE=1,MAX_PACKET_NUM_WRITE=1,MAX_PACKET_SIZE_READ=8192,MAX_PACKET_SIZE_WRITE=19200,MEM_ADDR_WIDTH=32,MEM_PORT_WIDTH=256,MM_MSG_QUEUE_DEPTH_READ=8,OUTPUT_MSG_QUEUE_DEPTH_READ=4,PIPELINE_READY_READ=0,PIPELINE_READY_WRITE=0,PREFETCH_THRESHOLD_READ=1,READ_ENABLE=0,RESPONSE_DETINATION_ID_WRITE=0,RESPONSE_SOURCE_ID_WRITE=0,SRC_WIDTH=8,SUPPORT_BEATS_OVERFLOW_PRETECTION=0,SYMBOLS_IN_SEQ=1,TASK_WIDTH=8,USE_RESPONSE_WRITE=0,WRITE_ENABLE=1,WRITE_HAS_PRIORITY=1)(alt_vip_vfb_rd_ctrl:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,SRC_WIDTH=8,TASK_WIDTH=8)(alt_vip_video_output_bridge:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,LOW_LATENCY_COMMAND_MODE=0,MULTI_CONTEXT_SUPPORT=0,NO_CONCATENATION=1,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,SOP_PRE_ALIGNED=1,SRC_WIDTH=8,TASK_WIDTH=8,TYPE_11_SUPPORT=0,VIDEO_PROTOCOL_NO=1)(alt_vip_packet_transfer:23.1:BURST_ALIGNMENT=1,BURST_TARGET_READ=32,BURST_TARGET_WRITE=8,CLOCKS_ARE_SEPARATE=1,COMB_OUTPUT_READ=0,COMB_OUTPUT_WRITE=0,CONTEXT_BUFFER_RATIO_READ=2,CONTEXT_BUFFER_RATIO_WRITE=4,CONTEXT_WIDTH=8,DATA_WIDTH=12,DOUT_MAX_DESTINATION_ID_NUM_READ=1,DOUT_SOURCE_ID_READ=1,DST_WIDTH=8,ELEMENTS_IN_PARALLEL=1,ENABLE_ADV_SETTING_READ=0,ENABLE_ADV_SETTING_WRITE=0,ENABLE_COMMAND_BUFFER_READ=1,ENABLE_MANY_COMMAND_READ=0,ENABLE_MANY_COMMAND_WRITE=0,ENABLE_MM_OUTPUT_REGISTER=0,ENABLE_PERIOD_MODE_READ=0,ENABLE_PERIOD_MODE_WRITE=0,FAMILY=Cyclone V,LOGIC_ONLY_SCFIFO_READ=0,MAX_CONTEXT_NUMBER_READ=1,MAX_CONTEXT_NUMBER_WRITE=1,MAX_PACKET_NUM_WRITE=16,MAX_PACKET_SIZE_READ=19200,MAX_PACKET_SIZE_WRITE=8192,MEM_ADDR_WIDTH=32,MEM_PORT_WIDTH=256,MM_MSG_QUEUE_DEPTH_READ=4,OUTPUT_MSG_QUEUE_DEPTH_READ=2,PIPELINE_READY_READ=1,PIPELINE_READY_WRITE=0,PREFETCH_THRESHOLD_READ=0,READ_ENABLE=1,RESPONSE_DETINATION_ID_WRITE=0,RESPONSE_SOURCE_ID_WRITE=0,SRC_WIDTH=8,SUPPORT_BEATS_OVERFLOW_PRETECTION=1,SYMBOLS_IN_SEQ=1,TASK_WIDTH=8,USE_RESPONSE_WRITE=0,WRITE_ENABLE=0,WRITE_HAS_PRIORITY=1)(alt_vip_vfb_sync_ctrl:23.1:ANC_BUFFER_LENGTH=1024,CONTEXT_WIDTH=8,CONTROLLED_DROP_REPEAT=0,DROP_FRAMES=0,DROP_INVALID_FIELDS=0,DROP_REPEAT_USER=0,DST_WIDTH=8,FRAME_BUFFER_LENGTH=29696,INTERLACED_SUPPORT=0,IS_FRAME_READER=0,IS_FRAME_WRITER=0,IS_SYNC_MASTER=0,IS_SYNC_SLAVE=0,MAX_HEIGHT=120,MAX_SYMBOLS_PER_PACKET=12,MAX_WIDTH=160,MEM_BASE_ADDR=0,MULTI_FRAME_DELAY=1,NUM_BUFFERS=2,READER_RUNTIME_CONTROL=0,REPEAT_FRAMES=0,SRC_WIDTH=8,TASK_WIDTH=8,USER_PACKETS_MAX_STORAGE=0,WRITER_RUNTIME_CONTROL=1)(clock:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:))(clock_source:23.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)"
+   instancePathKey="frame_buffer"
+   kind="frame_buffer"
+   version="1.0"
+   name="frame_buffer">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1718114892" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_WR_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_RD_ADDRESS_WIDTH"
+     value="AddressWidth = -1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MAIN_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter
+     name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_WR_ADDRESS_WIDTH"
+     value="AddressWidth = -1" />
+  <parameter name="AUTO_DEVICE" value="5CEBA4F23C7" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MEM_MASTER_RD_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_ALT_VIP_CL_VFB_0_MEM_CLOCK_RESET_DOMAIN" value="-1" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/frame_buffer.vhd"
+       type="VHDL" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/frame_buffer_alt_vip_cl_vfb_0.v"
+       type="VERILOG" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/frame_buffer_alt_vip_cl_vfb_0_video_in.v"
+       type="VERILOG" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_latency_1_to_latency_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_video_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_resp.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_cmd.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_wr_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_wr_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_dc_mixed_widths_fifo/src_hdl/alt_vip_common_dc_mixed_widths_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_fifo2/src_hdl/alt_vip_common_fifo2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_delay/src_hdl/alt_vip_common_delay.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_clock_crossing_bridge_grey/src_hdl/alt_vip_common_clock_crossing_bridge_grey.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_pack_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_twofold_ram.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_twofold_ram_reversed.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_read_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_write_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_dc_mixed_widths_fifo/src_hdl/alt_vip_common_dc_mixed_widths_fifo.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_fifo2/src_hdl/alt_vip_common_fifo2.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/alt_vip_packet_transfer.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_rd_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_rd_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_latency_0_to_latency_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_video_packet_empty.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_video_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_message_pipeline_stage/src_hdl/alt_vip_common_message_pipeline_stage.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_sop_align/src_hdl/alt_vip_common_sop_align.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_output_bridge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_output_bridge.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_sync_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_sync_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/full_ip/alt_vip_cl_vfb/alt_vip_cl_vfb_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge/alt_vip_video_input_bridge_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_resp/alt_vip_video_input_bridge_resp_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_cmd/alt_vip_video_input_bridge_cmd_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_wr_ctrl/alt_vip_vfb_wr_ctrl_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_packet_transfer/alt_vip_packet_transfer_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_rd_ctrl/alt_vip_vfb_rd_ctrl_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_output_bridge/alt_vip_video_output_bridge_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_sync_ctrl/alt_vip_vfb_sync_ctrl_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:frame_buffer "frame_buffer"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="frame_buffer"><![CDATA["<b>frame_buffer</b>" reuses <b>alt_vip_cl_vfb</b> "<b>submodules/frame_buffer_alt_vip_cl_vfb_0</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:alt_vip_cl_vfb "submodules/frame_buffer_alt_vip_cl_vfb_0"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>11</b> modules, <b>33</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_video_input_bridge</b> "<b>submodules/frame_buffer_alt_vip_cl_vfb_0_video_in</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_vfb_wr_ctrl</b> "<b>submodules/alt_vip_vfb_wr_ctrl</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_packet_transfer</b> "<b>submodules/alt_vip_packet_transfer</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_vfb_rd_ctrl</b> "<b>submodules/alt_vip_vfb_rd_ctrl</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_video_output_bridge</b> "<b>submodules/alt_vip_video_output_bridge</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_packet_transfer</b> "<b>submodules/alt_vip_packet_transfer</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_vfb_sync_ctrl</b> "<b>submodules/alt_vip_vfb_sync_ctrl</b>"]]></message>
+   <message level="Info" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>frame_buffer</b>" instantiated <b>alt_vip_cl_vfb</b> "<b>alt_vip_cl_vfb_0</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 6 starting:alt_vip_video_input_bridge "submodules/frame_buffer_alt_vip_cl_vfb_0_video_in"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>4</b> modules, <b>6</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="video_in"><![CDATA["<b>video_in</b>" reuses <b>alt_vip_video_input_bridge_resp</b> "<b>submodules/alt_vip_video_input_bridge_resp</b>"]]></message>
+   <message level="Debug" culprit="video_in"><![CDATA["<b>video_in</b>" reuses <b>alt_vip_video_input_bridge_cmd</b> "<b>submodules/alt_vip_video_input_bridge_cmd</b>"]]></message>
+   <message level="Info" culprit="video_in"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_video_input_bridge</b> "<b>video_in</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 1 starting:alt_vip_video_input_bridge_resp "submodules/alt_vip_video_input_bridge_resp"</message>
+   <message level="Info" culprit="vid_front"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_resp</b> "<b>vid_front</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:alt_vip_video_input_bridge_cmd "submodules/alt_vip_video_input_bridge_cmd"</message>
+   <message level="Info" culprit="vid_back"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_cmd</b> "<b>vid_back</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 7 starting:alt_vip_vfb_wr_ctrl "submodules/alt_vip_vfb_wr_ctrl"</message>
+   <message level="Info" culprit="wr_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_wr_ctrl</b> "<b>wr_ctrl</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 6 starting:alt_vip_packet_transfer "submodules/alt_vip_packet_transfer"</message>
+   <message level="Info" culprit="pkt_trans_wr"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_packet_transfer</b> "<b>pkt_trans_wr</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 5 starting:alt_vip_vfb_rd_ctrl "submodules/alt_vip_vfb_rd_ctrl"</message>
+   <message level="Info" culprit="rd_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_rd_ctrl</b> "<b>rd_ctrl</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 4 starting:alt_vip_video_output_bridge "submodules/alt_vip_video_output_bridge"</message>
+   <message level="Info" culprit="video_out"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_video_output_bridge</b> "<b>video_out</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 2 starting:alt_vip_vfb_sync_ctrl "submodules/alt_vip_vfb_sync_ctrl"</message>
+   <message level="Info" culprit="sync_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_sync_ctrl</b> "<b>sync_ctrl</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_cl_vfb:23.1:ACTUAL_MAX_SYM_ANC_PACKET=12,ANC_BUFFER_LENGTH=1024,AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_SPEEDGRADE=7,BITS_PER_SYMBOL=4,BURST_ALIGNMENT=1,CLOCKS_ARE_SEPARATE=1,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTROLLED_DROP_REPEAT=0,DROP_FRAMES=0,DROP_INVALID_FIELDS=0,DROP_REPEAT_USER=0,FAMILY=Cyclone V,FRAME_BUFFER_LENGTH=29696,INTERLACED_SUPPORT=0,IS_FRAME_READER=0,IS_FRAME_WRITER=0,IS_SYNC_MASTER=0,IS_SYNC_SLAVE=0,LINE_BASED_BUFFERING=0,MAX_HEIGHT=120,MAX_SYMBOLS_PER_PACKET=10,MAX_WIDTH=160,MEM_BASE_ADDR=0,MEM_BUFFER_OFFSET=16777216,MEM_PORT_WIDTH=256,MULTI_FRAME_DELAY=1,NUMBER_OF_COLOR_PLANES=3,NUM_BUFFERS=2,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,READER_RUNTIME_CONTROL=0,READY_LATENCY=1,READ_BURST_TARGET=32,READ_FIFO_DEPTH=64,REPEAT_FRAMES=0,TEST_INIT=0,USER_PACKETS_MAX_STORAGE=0,USE_BUFFER_OFFSET=0,WRITER_RUNTIME_CONTROL=1,WRITE_BURST_TARGET=32,WRITE_FIFO_DEPTH=64(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(alt_vip_video_input_bridge:23.1:AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(alt_vip_video_input_bridge_resp:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1)(alt_vip_video_input_bridge_cmd:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,SRC_WIDTH=8,TASK_WIDTH=8)(clock:23.1:)(clock:23.1:)(clock:23.1:)(reset:23.1:)(reset:23.1:)(avalon_streaming:23.1:))(alt_vip_vfb_wr_ctrl:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,MAX_HEIGHT=120,MAX_SYMBOLS_IN_ANC_PACKET=12,MAX_WIDTH=160,NUMBER_OF_COLOR_PLANES=3,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,SRC_WIDTH=8,TASK_WIDTH=8)(alt_vip_packet_transfer:23.1:BURST_ALIGNMENT=1,BURST_TARGET_READ=8,BURST_TARGET_WRITE=32,CLOCKS_ARE_SEPARATE=1,COMB_OUTPUT_READ=0,COMB_OUTPUT_WRITE=0,CONTEXT_BUFFER_RATIO_READ=4,CONTEXT_BUFFER_RATIO_WRITE=2,CONTEXT_WIDTH=8,DATA_WIDTH=12,DOUT_MAX_DESTINATION_ID_NUM_READ=32,DOUT_SOURCE_ID_READ=0,DST_WIDTH=8,ELEMENTS_IN_PARALLEL=1,ENABLE_ADV_SETTING_READ=0,ENABLE_ADV_SETTING_WRITE=0,ENABLE_COMMAND_BUFFER_READ=0,ENABLE_MANY_COMMAND_READ=0,ENABLE_MANY_COMMAND_WRITE=0,ENABLE_MM_OUTPUT_REGISTER=1,ENABLE_PERIOD_MODE_READ=0,ENABLE_PERIOD_MODE_WRITE=0,FAMILY=Cyclone V,LOGIC_ONLY_SCFIFO_READ=1,MAX_CONTEXT_NUMBER_READ=1,MAX_CONTEXT_NUMBER_WRITE=1,MAX_PACKET_NUM_WRITE=1,MAX_PACKET_SIZE_READ=8192,MAX_PACKET_SIZE_WRITE=19200,MEM_ADDR_WIDTH=32,MEM_PORT_WIDTH=256,MM_MSG_QUEUE_DEPTH_READ=8,OUTPUT_MSG_QUEUE_DEPTH_READ=4,PIPELINE_READY_READ=0,PIPELINE_READY_WRITE=0,PREFETCH_THRESHOLD_READ=1,READ_ENABLE=0,RESPONSE_DETINATION_ID_WRITE=0,RESPONSE_SOURCE_ID_WRITE=0,SRC_WIDTH=8,SUPPORT_BEATS_OVERFLOW_PRETECTION=0,SYMBOLS_IN_SEQ=1,TASK_WIDTH=8,USE_RESPONSE_WRITE=0,WRITE_ENABLE=1,WRITE_HAS_PRIORITY=1)(alt_vip_vfb_rd_ctrl:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,SRC_WIDTH=8,TASK_WIDTH=8)(alt_vip_video_output_bridge:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,LOW_LATENCY_COMMAND_MODE=0,MULTI_CONTEXT_SUPPORT=0,NO_CONCATENATION=1,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,SOP_PRE_ALIGNED=1,SRC_WIDTH=8,TASK_WIDTH=8,TYPE_11_SUPPORT=0,VIDEO_PROTOCOL_NO=1)(alt_vip_packet_transfer:23.1:BURST_ALIGNMENT=1,BURST_TARGET_READ=32,BURST_TARGET_WRITE=8,CLOCKS_ARE_SEPARATE=1,COMB_OUTPUT_READ=0,COMB_OUTPUT_WRITE=0,CONTEXT_BUFFER_RATIO_READ=2,CONTEXT_BUFFER_RATIO_WRITE=4,CONTEXT_WIDTH=8,DATA_WIDTH=12,DOUT_MAX_DESTINATION_ID_NUM_READ=1,DOUT_SOURCE_ID_READ=1,DST_WIDTH=8,ELEMENTS_IN_PARALLEL=1,ENABLE_ADV_SETTING_READ=0,ENABLE_ADV_SETTING_WRITE=0,ENABLE_COMMAND_BUFFER_READ=1,ENABLE_MANY_COMMAND_READ=0,ENABLE_MANY_COMMAND_WRITE=0,ENABLE_MM_OUTPUT_REGISTER=0,ENABLE_PERIOD_MODE_READ=0,ENABLE_PERIOD_MODE_WRITE=0,FAMILY=Cyclone V,LOGIC_ONLY_SCFIFO_READ=0,MAX_CONTEXT_NUMBER_READ=1,MAX_CONTEXT_NUMBER_WRITE=1,MAX_PACKET_NUM_WRITE=16,MAX_PACKET_SIZE_READ=19200,MAX_PACKET_SIZE_WRITE=8192,MEM_ADDR_WIDTH=32,MEM_PORT_WIDTH=256,MM_MSG_QUEUE_DEPTH_READ=4,OUTPUT_MSG_QUEUE_DEPTH_READ=2,PIPELINE_READY_READ=1,PIPELINE_READY_WRITE=0,PREFETCH_THRESHOLD_READ=0,READ_ENABLE=1,RESPONSE_DETINATION_ID_WRITE=0,RESPONSE_SOURCE_ID_WRITE=0,SRC_WIDTH=8,SUPPORT_BEATS_OVERFLOW_PRETECTION=1,SYMBOLS_IN_SEQ=1,TASK_WIDTH=8,USE_RESPONSE_WRITE=0,WRITE_ENABLE=0,WRITE_HAS_PRIORITY=1)(alt_vip_vfb_sync_ctrl:23.1:ANC_BUFFER_LENGTH=1024,CONTEXT_WIDTH=8,CONTROLLED_DROP_REPEAT=0,DROP_FRAMES=0,DROP_INVALID_FIELDS=0,DROP_REPEAT_USER=0,DST_WIDTH=8,FRAME_BUFFER_LENGTH=29696,INTERLACED_SUPPORT=0,IS_FRAME_READER=0,IS_FRAME_WRITER=0,IS_SYNC_MASTER=0,IS_SYNC_SLAVE=0,MAX_HEIGHT=120,MAX_SYMBOLS_PER_PACKET=12,MAX_WIDTH=160,MEM_BASE_ADDR=0,MULTI_FRAME_DELAY=1,NUM_BUFFERS=2,READER_RUNTIME_CONTROL=0,REPEAT_FRAMES=0,SRC_WIDTH=8,TASK_WIDTH=8,USER_PACKETS_MAX_STORAGE=0,WRITER_RUNTIME_CONTROL=1)(clock:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(clock:23.1:)(reset:23.1:)(clock:23.1:)(reset:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)(avalon_streaming:23.1:)"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0"
+   kind="alt_vip_cl_vfb"
+   version="23.1"
+   name="frame_buffer_alt_vip_cl_vfb_0">
+  <parameter name="READER_RUNTIME_CONTROL" value="0" />
+  <parameter name="CLOCKS_ARE_SEPARATE" value="1" />
+  <parameter name="MAX_WIDTH" value="160" />
+  <parameter name="USER_PACKETS_MAX_STORAGE" value="0" />
+  <parameter name="IS_FRAME_READER" value="0" />
+  <parameter name="INTERLACED_SUPPORT" value="0" />
+  <parameter name="USE_BUFFER_OFFSET" value="0" />
+  <parameter name="MEM_BUFFER_OFFSET" value="16777216" />
+  <parameter name="PRIORITIZE_FMAX" value="0" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="BURST_ALIGNMENT" value="1" />
+  <parameter name="DROP_INVALID_FIELDS" value="0" />
+  <parameter name="FAMILY" value="Cyclone V" />
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="IS_SYNC_SLAVE" value="0" />
+  <parameter name="ACTUAL_MAX_SYM_ANC_PACKET" value="12" />
+  <parameter name="MAX_HEIGHT" value="120" />
+  <parameter name="MAX_SYMBOLS_PER_PACKET" value="10" />
+  <parameter name="FRAME_BUFFER_LENGTH" value="29696" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <parameter name="IS_SYNC_MASTER" value="0" />
+  <parameter name="WRITE_BURST_TARGET" value="32" />
+  <parameter name="NUM_BUFFERS" value="2" />
+  <parameter name="TEST_INIT" value="0" />
+  <parameter name="MULTI_FRAME_DELAY" value="1" />
+  <parameter name="MEM_PORT_WIDTH" value="256" />
+  <parameter name="READ_FIFO_DEPTH" value="64" />
+  <parameter name="READY_LATENCY" value="1" />
+  <parameter name="CONTROLLED_DROP_REPEAT" value="0" />
+  <parameter name="ANC_BUFFER_LENGTH" value="1024" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="REPEAT_FRAMES" value="0" />
+  <parameter name="DROP_FRAMES" value="0" />
+  <parameter name="LINE_BASED_BUFFERING" value="0" />
+  <parameter name="AUTO_DEVICE" value="5CEBA4F23C7" />
+  <parameter name="MEM_BASE_ADDR" value="0" />
+  <parameter name="READ_BURST_TARGET" value="32" />
+  <parameter name="WRITE_FIFO_DEPTH" value="64" />
+  <parameter name="WRITER_RUNTIME_CONTROL" value="1" />
+  <parameter name="DROP_REPEAT_USER" value="0" />
+  <parameter name="IS_FRAME_WRITER" value="0" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/frame_buffer_alt_vip_cl_vfb_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/frame_buffer_alt_vip_cl_vfb_0_video_in.v"
+       type="VERILOG" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_latency_1_to_latency_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_video_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_resp.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_cmd.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_wr_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_wr_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_dc_mixed_widths_fifo/src_hdl/alt_vip_common_dc_mixed_widths_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_fifo2/src_hdl/alt_vip_common_fifo2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_delay/src_hdl/alt_vip_common_delay.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_clock_crossing_bridge_grey/src_hdl/alt_vip_common_clock_crossing_bridge_grey.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_pack_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_twofold_ram.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_twofold_ram_reversed.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_read_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_write_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_dc_mixed_widths_fifo/src_hdl/alt_vip_common_dc_mixed_widths_fifo.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_fifo2/src_hdl/alt_vip_common_fifo2.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/alt_vip_packet_transfer.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_rd_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_rd_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_latency_0_to_latency_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_video_packet_empty.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_video_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_message_pipeline_stage/src_hdl/alt_vip_common_message_pipeline_stage.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_sop_align/src_hdl/alt_vip_common_sop_align.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_output_bridge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_output_bridge.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_sync_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_sync_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/full_ip/alt_vip_cl_vfb/alt_vip_cl_vfb_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge/alt_vip_video_input_bridge_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_resp/alt_vip_video_input_bridge_resp_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_cmd/alt_vip_video_input_bridge_cmd_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_wr_ctrl/alt_vip_vfb_wr_ctrl_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_packet_transfer/alt_vip_packet_transfer_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_rd_ctrl/alt_vip_vfb_rd_ctrl_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_output_bridge/alt_vip_video_output_bridge_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_sync_ctrl/alt_vip_vfb_sync_ctrl_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="frame_buffer" as="alt_vip_cl_vfb_0" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:alt_vip_cl_vfb "submodules/frame_buffer_alt_vip_cl_vfb_0"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>11</b> modules, <b>33</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_video_input_bridge</b> "<b>submodules/frame_buffer_alt_vip_cl_vfb_0_video_in</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_vfb_wr_ctrl</b> "<b>submodules/alt_vip_vfb_wr_ctrl</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_packet_transfer</b> "<b>submodules/alt_vip_packet_transfer</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_vfb_rd_ctrl</b> "<b>submodules/alt_vip_vfb_rd_ctrl</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_video_output_bridge</b> "<b>submodules/alt_vip_video_output_bridge</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_packet_transfer</b> "<b>submodules/alt_vip_packet_transfer</b>"]]></message>
+   <message level="Debug" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>alt_vip_cl_vfb_0</b>" reuses <b>alt_vip_vfb_sync_ctrl</b> "<b>submodules/alt_vip_vfb_sync_ctrl</b>"]]></message>
+   <message level="Info" culprit="alt_vip_cl_vfb_0"><![CDATA["<b>frame_buffer</b>" instantiated <b>alt_vip_cl_vfb</b> "<b>alt_vip_cl_vfb_0</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 6 starting:alt_vip_video_input_bridge "submodules/frame_buffer_alt_vip_cl_vfb_0_video_in"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>4</b> modules, <b>6</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="video_in"><![CDATA["<b>video_in</b>" reuses <b>alt_vip_video_input_bridge_resp</b> "<b>submodules/alt_vip_video_input_bridge_resp</b>"]]></message>
+   <message level="Debug" culprit="video_in"><![CDATA["<b>video_in</b>" reuses <b>alt_vip_video_input_bridge_cmd</b> "<b>submodules/alt_vip_video_input_bridge_cmd</b>"]]></message>
+   <message level="Info" culprit="video_in"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_video_input_bridge</b> "<b>video_in</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 1 starting:alt_vip_video_input_bridge_resp "submodules/alt_vip_video_input_bridge_resp"</message>
+   <message level="Info" culprit="vid_front"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_resp</b> "<b>vid_front</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:alt_vip_video_input_bridge_cmd "submodules/alt_vip_video_input_bridge_cmd"</message>
+   <message level="Info" culprit="vid_back"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_cmd</b> "<b>vid_back</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 7 starting:alt_vip_vfb_wr_ctrl "submodules/alt_vip_vfb_wr_ctrl"</message>
+   <message level="Info" culprit="wr_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_wr_ctrl</b> "<b>wr_ctrl</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 6 starting:alt_vip_packet_transfer "submodules/alt_vip_packet_transfer"</message>
+   <message level="Info" culprit="pkt_trans_wr"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_packet_transfer</b> "<b>pkt_trans_wr</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 5 starting:alt_vip_vfb_rd_ctrl "submodules/alt_vip_vfb_rd_ctrl"</message>
+   <message level="Info" culprit="rd_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_rd_ctrl</b> "<b>rd_ctrl</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 4 starting:alt_vip_video_output_bridge "submodules/alt_vip_video_output_bridge"</message>
+   <message level="Info" culprit="video_out"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_video_output_bridge</b> "<b>video_out</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 2 starting:alt_vip_vfb_sync_ctrl "submodules/alt_vip_vfb_sync_ctrl"</message>
+   <message level="Info" culprit="sync_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_sync_ctrl</b> "<b>sync_ctrl</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_video_input_bridge:23.1:AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1(altera_clock_bridge:23.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=0,NUM_CLOCK_OUTPUTS=1)(altera_reset_bridge:23.1:ACTIVE_LOW_RESET=0,AUTO_CLK_CLOCK_RATE=0,NUM_RESET_OUTPUTS=1,SYNCHRONOUS_EDGES=deassert,USE_RESET_REQUEST=0)(alt_vip_video_input_bridge_resp:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1)(alt_vip_video_input_bridge_cmd:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,SRC_WIDTH=8,TASK_WIDTH=8)(clock:23.1:)(clock:23.1:)(clock:23.1:)(reset:23.1:)(reset:23.1:)(avalon_streaming:23.1:)"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:video_in"
+   kind="alt_vip_video_input_bridge"
+   version="23.1"
+   name="frame_buffer_alt_vip_cl_vfb_0_video_in">
+  <parameter name="RESP_SRC_ADDRESS" value="0" />
+  <parameter name="MAX_WIDTH" value="1920" />
+  <parameter name="MULTI_CONTEXT_SUPPORT" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="PIPELINE_READY" value="0" />
+  <parameter name="DEFAULT_LINE_LENGTH" value="160" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="READY_LATENCY_1" value="1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="DST_WIDTH" value="8" />
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="DATA_SRC_ADDRESS" value="0" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="RESP_DST_ADDRESS" value="0" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="VIDEO_PROTOCOL_NO" value="1" />
+  <parameter name="AUTO_DEVICE" value="5CEBA4F23C7" />
+  <parameter name="MAX_HEIGHT" value="1080" />
+  <parameter name="VIB_MODE" value="LITE" />
+  <parameter name="ENABLE_RESOLUTION_CHECK" value="0" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/frame_buffer_alt_vip_cl_vfb_0_video_in.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_latency_1_to_latency_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_video_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_resp.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_cmd.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge/alt_vip_video_input_bridge_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_resp/alt_vip_video_input_bridge_resp_hw.tcl" />
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_cmd/alt_vip_video_input_bridge_cmd_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0" as="video_in" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 6 starting:alt_vip_video_input_bridge "submodules/frame_buffer_alt_vip_cl_vfb_0_video_in"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>4</b> modules, <b>6</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="video_in"><![CDATA["<b>video_in</b>" reuses <b>alt_vip_video_input_bridge_resp</b> "<b>submodules/alt_vip_video_input_bridge_resp</b>"]]></message>
+   <message level="Debug" culprit="video_in"><![CDATA["<b>video_in</b>" reuses <b>alt_vip_video_input_bridge_cmd</b> "<b>submodules/alt_vip_video_input_bridge_cmd</b>"]]></message>
+   <message level="Info" culprit="video_in"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_video_input_bridge</b> "<b>video_in</b>"]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 1 starting:alt_vip_video_input_bridge_resp "submodules/alt_vip_video_input_bridge_resp"</message>
+   <message level="Info" culprit="vid_front"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_resp</b> "<b>vid_front</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:alt_vip_video_input_bridge_cmd "submodules/alt_vip_video_input_bridge_cmd"</message>
+   <message level="Info" culprit="vid_back"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_cmd</b> "<b>vid_back</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_vfb_wr_ctrl:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,MAX_HEIGHT=120,MAX_SYMBOLS_IN_ANC_PACKET=12,MAX_WIDTH=160,NUMBER_OF_COLOR_PLANES=3,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,SRC_WIDTH=8,TASK_WIDTH=8"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:wr_ctrl"
+   kind="alt_vip_vfb_wr_ctrl"
+   version="23.1"
+   name="alt_vip_vfb_wr_ctrl">
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="MAX_WIDTH" value="160" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="MAX_SYMBOLS_IN_ANC_PACKET" value="12" />
+  <parameter name="MAX_HEIGHT" value="120" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="PRIORITIZE_FMAX" value="0" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="DST_WIDTH" value="8" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_wr_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_wr_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_wr_ctrl/alt_vip_vfb_wr_ctrl_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0" as="wr_ctrl" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 7 starting:alt_vip_vfb_wr_ctrl "submodules/alt_vip_vfb_wr_ctrl"</message>
+   <message level="Info" culprit="wr_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_wr_ctrl</b> "<b>wr_ctrl</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_packet_transfer:23.1:BURST_ALIGNMENT=1,BURST_TARGET_READ=8,BURST_TARGET_WRITE=32,CLOCKS_ARE_SEPARATE=1,COMB_OUTPUT_READ=0,COMB_OUTPUT_WRITE=0,CONTEXT_BUFFER_RATIO_READ=4,CONTEXT_BUFFER_RATIO_WRITE=2,CONTEXT_WIDTH=8,DATA_WIDTH=12,DOUT_MAX_DESTINATION_ID_NUM_READ=32,DOUT_SOURCE_ID_READ=0,DST_WIDTH=8,ELEMENTS_IN_PARALLEL=1,ENABLE_ADV_SETTING_READ=0,ENABLE_ADV_SETTING_WRITE=0,ENABLE_COMMAND_BUFFER_READ=0,ENABLE_MANY_COMMAND_READ=0,ENABLE_MANY_COMMAND_WRITE=0,ENABLE_MM_OUTPUT_REGISTER=1,ENABLE_PERIOD_MODE_READ=0,ENABLE_PERIOD_MODE_WRITE=0,FAMILY=Cyclone V,LOGIC_ONLY_SCFIFO_READ=1,MAX_CONTEXT_NUMBER_READ=1,MAX_CONTEXT_NUMBER_WRITE=1,MAX_PACKET_NUM_WRITE=1,MAX_PACKET_SIZE_READ=8192,MAX_PACKET_SIZE_WRITE=19200,MEM_ADDR_WIDTH=32,MEM_PORT_WIDTH=256,MM_MSG_QUEUE_DEPTH_READ=8,OUTPUT_MSG_QUEUE_DEPTH_READ=4,PIPELINE_READY_READ=0,PIPELINE_READY_WRITE=0,PREFETCH_THRESHOLD_READ=1,READ_ENABLE=0,RESPONSE_DETINATION_ID_WRITE=0,RESPONSE_SOURCE_ID_WRITE=0,SRC_WIDTH=8,SUPPORT_BEATS_OVERFLOW_PRETECTION=0,SYMBOLS_IN_SEQ=1,TASK_WIDTH=8,USE_RESPONSE_WRITE=0,WRITE_ENABLE=1,WRITE_HAS_PRIORITY=1"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:pkt_trans_wr"
+   kind="alt_vip_packet_transfer"
+   version="23.1"
+   name="alt_vip_packet_transfer">
+  <parameter name="CLOCKS_ARE_SEPARATE" value="1" />
+  <parameter name="MAX_CONTEXT_NUMBER_WRITE" value="1" />
+  <parameter name="CONTEXT_BUFFER_RATIO_READ" value="4" />
+  <parameter name="MAX_PACKET_SIZE_READ" value="8192" />
+  <parameter name="ENABLE_MM_OUTPUT_REGISTER" value="1" />
+  <parameter name="RESPONSE_DETINATION_ID_WRITE" value="0" />
+  <parameter name="RESPONSE_SOURCE_ID_WRITE" value="0" />
+  <parameter name="WRITE_ENABLE" value="1" />
+  <parameter name="BURST_ALIGNMENT" value="1" />
+  <parameter name="ENABLE_MANY_COMMAND_WRITE" value="0" />
+  <parameter name="FAMILY" value="Cyclone V" />
+  <parameter name="DST_WIDTH" value="8" />
+  <parameter name="LOGIC_ONLY_SCFIFO_READ" value="1" />
+  <parameter name="DOUT_MAX_DESTINATION_ID_NUM_READ" value="32" />
+  <parameter name="ENABLE_ADV_SETTING_READ" value="0" />
+  <parameter name="DATA_WIDTH" value="12" />
+  <parameter name="USE_RESPONSE_WRITE" value="0" />
+  <parameter name="PIPELINE_READY_READ" value="0" />
+  <parameter name="READ_ENABLE" value="0" />
+  <parameter name="ENABLE_PERIOD_MODE_READ" value="0" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="BURST_TARGET_WRITE" value="32" />
+  <parameter name="MEM_ADDR_WIDTH" value="32" />
+  <parameter name="SUPPORT_BEATS_OVERFLOW_PRETECTION" value="0" />
+  <parameter name="DOUT_SOURCE_ID_READ" value="0" />
+  <parameter name="COMB_OUTPUT_WRITE" value="0" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="COMB_OUTPUT_READ" value="0" />
+  <parameter name="PIPELINE_READY_WRITE" value="0" />
+  <parameter name="MEM_PORT_WIDTH" value="256" />
+  <parameter name="CONTEXT_BUFFER_RATIO_WRITE" value="2" />
+  <parameter name="MM_MSG_QUEUE_DEPTH_READ" value="8" />
+  <parameter name="WRITE_HAS_PRIORITY" value="1" />
+  <parameter name="ENABLE_COMMAND_BUFFER_READ" value="0" />
+  <parameter name="PREFETCH_THRESHOLD_READ" value="1" />
+  <parameter name="BURST_TARGET_READ" value="8" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="ELEMENTS_IN_PARALLEL" value="1" />
+  <parameter name="OUTPUT_MSG_QUEUE_DEPTH_READ" value="4" />
+  <parameter name="ENABLE_PERIOD_MODE_WRITE" value="0" />
+  <parameter name="MAX_CONTEXT_NUMBER_READ" value="1" />
+  <parameter name="SYMBOLS_IN_SEQ" value="1" />
+  <parameter name="MAX_PACKET_SIZE_WRITE" value="19200" />
+  <parameter name="ENABLE_ADV_SETTING_WRITE" value="0" />
+  <parameter name="ENABLE_MANY_COMMAND_READ" value="0" />
+  <parameter name="MAX_PACKET_NUM_WRITE" value="1" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_dc_mixed_widths_fifo/src_hdl/alt_vip_common_dc_mixed_widths_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_fifo2/src_hdl/alt_vip_common_fifo2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_delay/src_hdl/alt_vip_common_delay.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_clock_crossing_bridge_grey/src_hdl/alt_vip_common_clock_crossing_bridge_grey.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_pack_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_twofold_ram.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_twofold_ram_reversed.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_read_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer_write_proc.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_packet_transfer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_dc_mixed_widths_fifo/src_hdl/alt_vip_common_dc_mixed_widths_fifo.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_fifo2/src_hdl/alt_vip_common_fifo2.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/alt_vip_packet_transfer.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_packet_transfer/alt_vip_packet_transfer_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="frame_buffer_alt_vip_cl_vfb_0"
+     as="pkt_trans_wr,pkt_trans_rd" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 6 starting:alt_vip_packet_transfer "submodules/alt_vip_packet_transfer"</message>
+   <message level="Info" culprit="pkt_trans_wr"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_packet_transfer</b> "<b>pkt_trans_wr</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_vfb_rd_ctrl:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIXELS_IN_PARALLEL=1,PRIORITIZE_FMAX=0,SRC_WIDTH=8,TASK_WIDTH=8"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:rd_ctrl"
+   kind="alt_vip_vfb_rd_ctrl"
+   version="23.1"
+   name="alt_vip_vfb_rd_ctrl">
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="PRIORITIZE_FMAX" value="0" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="DST_WIDTH" value="8" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_rd_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_rd_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_rd_ctrl/alt_vip_vfb_rd_ctrl_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0" as="rd_ctrl" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 5 starting:alt_vip_vfb_rd_ctrl "submodules/alt_vip_vfb_rd_ctrl"</message>
+   <message level="Info" culprit="rd_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_rd_ctrl</b> "<b>rd_ctrl</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_video_output_bridge:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DST_WIDTH=8,LOW_LATENCY_COMMAND_MODE=0,MULTI_CONTEXT_SUPPORT=0,NO_CONCATENATION=1,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,SOP_PRE_ALIGNED=1,SRC_WIDTH=8,TASK_WIDTH=8,TYPE_11_SUPPORT=0,VIDEO_PROTOCOL_NO=1"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:video_out"
+   kind="alt_vip_video_output_bridge"
+   version="23.1"
+   name="alt_vip_video_output_bridge">
+  <parameter name="LOW_LATENCY_COMMAND_MODE" value="0" />
+  <parameter name="SOP_PRE_ALIGNED" value="1" />
+  <parameter name="MULTI_CONTEXT_SUPPORT" value="0" />
+  <parameter name="NO_CONCATENATION" value="1" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="PIPELINE_READY" value="0" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="READY_LATENCY_1" value="1" />
+  <parameter name="DST_WIDTH" value="8" />
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="TYPE_11_SUPPORT" value="0" />
+  <parameter name="VIDEO_PROTOCOL_NO" value="1" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_latency_0_to_latency_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_video_packet_empty.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_encode/src_hdl/alt_vip_common_video_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_message_pipeline_stage/src_hdl/alt_vip_common_message_pipeline_stage.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_sop_align/src_hdl/alt_vip_common_sop_align.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_output_bridge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_output_bridge.ocp"
+       type="OTHER"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_output_bridge/alt_vip_video_output_bridge_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0" as="video_out" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 4 starting:alt_vip_video_output_bridge "submodules/alt_vip_video_output_bridge"</message>
+   <message level="Info" culprit="video_out"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_video_output_bridge</b> "<b>video_out</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_vfb_sync_ctrl:23.1:ANC_BUFFER_LENGTH=1024,CONTEXT_WIDTH=8,CONTROLLED_DROP_REPEAT=0,DROP_FRAMES=0,DROP_INVALID_FIELDS=0,DROP_REPEAT_USER=0,DST_WIDTH=8,FRAME_BUFFER_LENGTH=29696,INTERLACED_SUPPORT=0,IS_FRAME_READER=0,IS_FRAME_WRITER=0,IS_SYNC_MASTER=0,IS_SYNC_SLAVE=0,MAX_HEIGHT=120,MAX_SYMBOLS_PER_PACKET=12,MAX_WIDTH=160,MEM_BASE_ADDR=0,MULTI_FRAME_DELAY=1,NUM_BUFFERS=2,READER_RUNTIME_CONTROL=0,REPEAT_FRAMES=0,SRC_WIDTH=8,TASK_WIDTH=8,USER_PACKETS_MAX_STORAGE=0,WRITER_RUNTIME_CONTROL=1"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:sync_ctrl"
+   kind="alt_vip_vfb_sync_ctrl"
+   version="23.1"
+   name="alt_vip_vfb_sync_ctrl">
+  <parameter name="READER_RUNTIME_CONTROL" value="0" />
+  <parameter name="MAX_WIDTH" value="160" />
+  <parameter name="USER_PACKETS_MAX_STORAGE" value="0" />
+  <parameter name="IS_FRAME_READER" value="0" />
+  <parameter name="INTERLACED_SUPPORT" value="0" />
+  <parameter name="DROP_INVALID_FIELDS" value="0" />
+  <parameter name="DST_WIDTH" value="8" />
+  <parameter name="IS_SYNC_SLAVE" value="0" />
+  <parameter name="MAX_HEIGHT" value="120" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="FRAME_BUFFER_LENGTH" value="29696" />
+  <parameter name="MAX_SYMBOLS_PER_PACKET" value="12" />
+  <parameter name="IS_SYNC_MASTER" value="0" />
+  <parameter name="NUM_BUFFERS" value="2" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="MULTI_FRAME_DELAY" value="1" />
+  <parameter name="ANC_BUFFER_LENGTH" value="1024" />
+  <parameter name="CONTROLLED_DROP_REPEAT" value="0" />
+  <parameter name="REPEAT_FRAMES" value="0" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="DROP_FRAMES" value="0" />
+  <parameter name="MEM_BASE_ADDR" value="0" />
+  <parameter name="WRITER_RUNTIME_CONTROL" value="1" />
+  <parameter name="DROP_REPEAT_USER" value="0" />
+  <parameter name="IS_FRAME_WRITER" value="0" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_sync_ctrl.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_vfb_sync_ctrl.ocp"
+       type="OTHER"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/utility/alt_vip_vfb_sync_ctrl/alt_vip_vfb_sync_ctrl_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0" as="sync_ctrl" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 2 starting:alt_vip_vfb_sync_ctrl "submodules/alt_vip_vfb_sync_ctrl"</message>
+   <message level="Info" culprit="sync_ctrl"><![CDATA["<b>alt_vip_cl_vfb_0</b>" instantiated <b>alt_vip_vfb_sync_ctrl</b> "<b>sync_ctrl</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_video_input_bridge_resp:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DEFAULT_LINE_LENGTH=160,DST_WIDTH=8,ENABLE_RESOLUTION_CHECK=0,MAX_HEIGHT=1080,MAX_WIDTH=1920,MULTI_CONTEXT_SUPPORT=0,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,READY_LATENCY_1=1,RESP_DST_ADDRESS=0,RESP_SRC_ADDRESS=0,SRC_WIDTH=8,TASK_WIDTH=8,VIB_MODE=LITE,VIDEO_PROTOCOL_NO=1"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:video_in:.:vid_front"
+   kind="alt_vip_video_input_bridge_resp"
+   version="23.1"
+   name="alt_vip_video_input_bridge_resp">
+  <parameter name="RESP_SRC_ADDRESS" value="0" />
+  <parameter name="MAX_WIDTH" value="1920" />
+  <parameter name="MULTI_CONTEXT_SUPPORT" value="0" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="PIPELINE_READY" value="0" />
+  <parameter name="DEFAULT_LINE_LENGTH" value="160" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="READY_LATENCY_1" value="1" />
+  <parameter name="DST_WIDTH" value="8" />
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="DATA_SRC_ADDRESS" value="0" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="RESP_DST_ADDRESS" value="0" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="VIDEO_PROTOCOL_NO" value="1" />
+  <parameter name="MAX_HEIGHT" value="1080" />
+  <parameter name="VIB_MODE" value="LITE" />
+  <parameter name="ENABLE_RESOLUTION_CHECK" value="0" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_latency_1_to_latency_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_video_packet_decode/src_hdl/alt_vip_common_video_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_resp.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_resp/alt_vip_video_input_bridge_resp_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0_video_in" as="vid_front" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 1 starting:alt_vip_video_input_bridge_resp "submodules/alt_vip_video_input_bridge_resp"</message>
+   <message level="Info" culprit="vid_front"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_resp</b> "<b>vid_front</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_vip_video_input_bridge_cmd:23.1:BITS_PER_SYMBOL=4,COLOR_PLANES_ARE_IN_PARALLEL=1,CONTEXT_WIDTH=8,DATA_SRC_ADDRESS=0,DST_WIDTH=8,NUMBER_OF_COLOR_PLANES=3,PIPELINE_READY=0,PIXELS_IN_PARALLEL=1,SRC_WIDTH=8,TASK_WIDTH=8"
+   instancePathKey="frame_buffer:.:alt_vip_cl_vfb_0:.:video_in:.:vid_back"
+   kind="alt_vip_video_input_bridge_cmd"
+   version="23.1"
+   name="alt_vip_video_input_bridge_cmd">
+  <parameter name="COLOR_PLANES_ARE_IN_PARALLEL" value="1" />
+  <parameter name="DATA_SRC_ADDRESS" value="0" />
+  <parameter name="SRC_WIDTH" value="8" />
+  <parameter name="BITS_PER_SYMBOL" value="4" />
+  <parameter name="CONTEXT_WIDTH" value="8" />
+  <parameter name="PIPELINE_READY" value="0" />
+  <parameter name="TASK_WIDTH" value="8" />
+  <parameter name="NUMBER_OF_COLOR_PLANES" value="3" />
+  <parameter name="PIXELS_IN_PARALLEL" value="1" />
+  <parameter name="DST_WIDTH" value="8" />
+  <generatedFiles>
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/src_hdl/alt_vip_video_input_bridge_cmd.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/home/beserrovsky/intelFPGA/23.1std/ip/altera/vip/ip_library/component_ip/processing/alt_vip_video_input_bridge_cmd/alt_vip_video_input_bridge_cmd_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="frame_buffer_alt_vip_cl_vfb_0_video_in" as="vid_back" />
+  <messages>
+   <message level="Debug" culprit="frame_buffer">queue size: 0 starting:alt_vip_video_input_bridge_cmd "submodules/alt_vip_video_input_bridge_cmd"</message>
+   <message level="Info" culprit="vid_back"><![CDATA["<b>video_in</b>" instantiated <b>alt_vip_video_input_bridge_cmd</b> "<b>vid_back</b>"]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/common/alt_vip_common_pkg.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_decode/src_hdl/alt_vip_common_event_packet_decode.sv</b>]]></message>
+   <message level="Info"><![CDATA[Reusing file <b>/home/beserrovsky/code/labDig_A/hamster_2/frame_buffer/synthesis/submodules/modules/alt_vip_common_event_packet_encode/src_hdl/alt_vip_common_event_packet_encode.sv</b>]]></message>
+  </messages>
+ </entity>
+</deploy>
