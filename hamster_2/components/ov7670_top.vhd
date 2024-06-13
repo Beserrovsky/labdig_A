@@ -98,7 +98,7 @@ architecture Behavioral of ov7670_top is
 
    signal capture_addr  : std_logic_vector(14 downto 0);
    signal capture_data  : std_logic_vector(7 downto 0);
-   signal capture_we    : std_logic_vector(0 downto 0);
+   signal capture_we    : std_logic;
    signal resend : std_logic;
    signal config_finished : std_logic;
 
@@ -123,7 +123,7 @@ btn_debounce: debounce PORT MAP(
 fb : frame_buffer
   PORT MAP (
     wrclock  => OV7670_PCLK,
-    wren   => capture_we(0),
+    wren   => capture_we,
     wraddress => capture_addr,
     data  => capture_data,
     
@@ -141,7 +141,7 @@ capture: ov7670_capture PORT MAP(
       d     => OV7670_D,
       addr  => capture_addr,
       dout  => capture_data,
-      we    => capture_we(0)
+      we    => capture_we
    );
   
 controller: ov7670_controller PORT MAP(
