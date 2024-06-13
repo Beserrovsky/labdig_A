@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="clk40_sim/clk40.vho" type="VHDL" />
+ <topLevel name="clk40" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

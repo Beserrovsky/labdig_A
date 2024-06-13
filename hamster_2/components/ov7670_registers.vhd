@@ -94,7 +94,7 @@ begin
             when x"35" => sreg <= x"AA94"; -- NALG AEC Algo select
             when x"36" => sreg <= x"13E5"; -- COM8 AGC Settings
 
-            -- when x"37" => sreg <= x"1E11"; -- VFLIP - NOT WORKING
+            when x"37" => sreg <= x"1E11"; -- VFLIP - NOT WORKING
 
             when others => sreg <= x"ffff";
          end case;

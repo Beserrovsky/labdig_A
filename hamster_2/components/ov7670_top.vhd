@@ -92,6 +92,17 @@ architecture Behavioral of ov7670_top is
       frame_pixel : IN std_logic_vector(7 downto 0)         
       );
    END COMPONENT;
+
+   COMPONENT clk40 is
+      port (
+         refclk   : in  std_logic := '0'; --  refclk.clk
+         rst      : in  std_logic := '0'; --   reset.reset
+         outclk_0 : out std_logic;        -- outclk0.clk
+         locked   : out std_logic         --  locked.export
+      );
+   end COMPONENT clk40;
+
+   signal sclk40 : std_logic;
    
    signal frame_addr  : std_logic_vector(14 downto 0);
    signal frame_pixel : std_logic_vector(7 downto 0);
@@ -103,55 +114,68 @@ architecture Behavioral of ov7670_top is
    signal config_finished : std_logic;
 
 begin
-btn_debounce: debounce PORT MAP(
-      clk => CLOCK_50,
-      i   => KEY(0),
-      o   => resend
-   );
 
-   Inst_vga: vga PORT MAP(
-      clk50       => CLOCK_50,
-      vga_red     => VGA_R,
-      vga_green   => VGA_G,
-      vga_blue    => VGA_B,
-      vga_hsync   => VGA_HS,
-      vga_vsync   => VGA_VS,
-      frame_addr  => frame_addr,
-      frame_pixel => frame_pixel
-   );
+   clk40_inst : clk40
+      port map (
+         refclk   => CLOCK_50,
+         rst      => '0',
+         outclk_0 => sclk40,
+         locked   => open
+      );
 
-fb : frame_buffer
-  PORT MAP (
-    wrclock  => OV7670_PCLK,
-    wren   => capture_we,
-    wraddress => capture_addr,
-    data  => capture_data,
-    
-    rdclock  => CLOCK_50,
-    rdaddress => frame_addr,
-    q => frame_pixel
-  );
+   btn_debounce: debounce 
+      port map(
+         clk => sclk40,
+         i   => not KEY(0),
+         o   => resend
+      );
 
-LEDR <= "000000000" & config_finished;
+   Inst_vga: vga 
+      port map(
+         clk50       => sclk40,
+         vga_red     => VGA_R,
+         vga_green   => VGA_G,
+         vga_blue    => VGA_B,
+         vga_hsync   => VGA_HS,
+         vga_vsync   => VGA_VS,
+         frame_addr  => frame_addr,
+         frame_pixel => frame_pixel
+      );
+
+   fb : frame_buffer
+      port map (
+         wrclock  => OV7670_PCLK,
+         wren   => capture_we,
+         wraddress => capture_addr,
+         data  => capture_data,
+         
+         rdclock  => sclk40,
+         rdaddress => frame_addr,
+         q => frame_pixel
+      );
+
+   LEDR <= "000000000" & config_finished;
   
-capture: ov7670_capture PORT MAP(
-      pclk  => OV7670_PCLK,
-      vsync => OV7670_VSYNC,
-      href  => OV7670_HREF,
-      d     => OV7670_D,
-      addr  => capture_addr,
-      dout  => capture_data,
-      we    => capture_we
-   );
-  
-controller: ov7670_controller PORT MAP(
-      clk   => CLOCK_50,
-      sioc  => ov7670_sioc,
-      resend => resend,
-      config_finished => config_finished,
-      siod  => ov7670_siod,
-      pwdn  => OV7670_PWDN,
-      reset => OV7670_RESET,
-      xclk  => OV7670_XCLK
-   );
+   capture: ov7670_capture 
+      port map(
+         pclk  => OV7670_PCLK,
+         vsync => OV7670_VSYNC,
+         href  => OV7670_HREF,
+         d     => OV7670_D,
+         addr  => capture_addr,
+         dout  => capture_data,
+         we    => capture_we
+      );
+   
+   controller: ov7670_controller 
+      port map(
+         clk   => sclk40,
+         sioc  => ov7670_sioc,
+         resend => resend,
+         config_finished => config_finished,
+         siod  => ov7670_siod,
+         pwdn  => OV7670_PWDN,
+         reset => OV7670_RESET,
+         xclk  => OV7670_XCLK
+      );
 end Behavioral;
