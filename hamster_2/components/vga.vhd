@@ -11,13 +11,13 @@ library IEEE;
 entity vga is
     Port ( 
       clk50       : in  STD_LOGIC;
-      vga_red     : out STD_LOGIC_VECTOR(2 downto 0);
-      vga_green   : out STD_LOGIC_VECTOR(2 downto 0);
-      vga_blue    : out STD_LOGIC_VECTOR(2 downto 1);
+      vga_red     : out STD_LOGIC_VECTOR(3 downto 0);
+      vga_green   : out STD_LOGIC_VECTOR(3 downto 0);
+      vga_blue    : out STD_LOGIC_VECTOR(3 downto 0);
       vga_hsync   : out STD_LOGIC;
       vga_vsync   : out STD_LOGIC;
       frame_addr  : out STD_LOGIC_VECTOR(14 downto 0);
-      frame_pixel : in  STD_LOGIC_VECTOR(7 downto 0)
+      frame_pixel : in  STD_LOGIC_VECTOR(11 downto 0)
     );
 end vga;
 
@@ -59,9 +59,9 @@ begin
          end if;
 
          if blank = '0' then
-            vga_red   <= frame_pixel(7 downto 5);
-            vga_green <= frame_pixel(4 downto 2);
-            vga_blue  <= frame_pixel(1 downto 0);
+            vga_red   <= frame_pixel(11 downto 8);
+            vga_green <= frame_pixel(7 downto 4);
+            vga_blue  <= frame_pixel(3 downto 0);
          else
             vga_red   <= (others => '0');
             vga_green <= (others => '0');

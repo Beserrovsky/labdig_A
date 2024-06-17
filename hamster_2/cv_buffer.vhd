@@ -4,7 +4,7 @@
 -- MODULE: altsyncram 
 
 -- ============================================================
--- File Name: frame_buffer.vhd
+-- File Name: cv_buffer.vhd
 -- Megafunction Name(s):
 -- 			altsyncram
 --
@@ -40,7 +40,7 @@ USE ieee.std_logic_1164.all;
 LIBRARY altera_mf;
 USE altera_mf.altera_mf_components.all;
 
-ENTITY frame_buffer IS
+ENTITY cv_buffer IS
 	PORT
 	(
 		data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
@@ -51,10 +51,10 @@ ENTITY frame_buffer IS
 		wren		: IN STD_LOGIC  := '0';
 		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0)
 	);
-END frame_buffer;
+END cv_buffer;
 
 
-ARCHITECTURE SYN OF frame_buffer IS
+ARCHITECTURE SYN OF cv_buffer IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (11 DOWNTO 0);
 
@@ -191,9 +191,9 @@ END SYN;
 -- Retrieval info: CONNECT: @data_a 0 0 12 0 data 0 0 12 0
 -- Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 12 0 @q_b 0 0 12 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL frame_buffer.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL frame_buffer.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL frame_buffer.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL frame_buffer.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL frame_buffer_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cv_buffer.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cv_buffer.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cv_buffer.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cv_buffer.bsf FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cv_buffer_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf

@@ -41,9 +41,9 @@ begin
             when x"04" => sreg <= x"0C04"; -- COM3  Lots of stuff, enable scaling, all others off
             when x"05" => sreg <= x"3E19"; -- COM14  PCLK scaling = 0
             
-             when x"06" => sreg <= x"4010"; -- COM15  Full 0-255 output, RGB 565
+            when x"06" => sreg <= x"4000"; -- COM15  Full 0-255 output, RGB 565
             when x"07" => sreg <= x"3a04"; -- TSLB   Set UV ordering,  do not auto-reset window
-            when x"08" => sreg <= x"8C00"; -- RGB444 Set RGB format
+            when x"08" => sreg <= x"8C02"; -- RGB444 Set RGB format
             
             when x"09" => sreg <= x"1714"; -- HSTART HREF start (high 8 bits)
             when x"0a" => sreg <= x"1802"; -- HSTOP  HREF stop (high 8 bits)
